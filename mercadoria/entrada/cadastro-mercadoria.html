@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ab9666b33.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <link rel="stylesheet" href="cadastro-mercadoria.css">
+    <title>Cadastro de mercadoria</title>
+</head>
+<body>
+
+    <main>
+        <div class="main">
+            <div class="header-banner">
+                <h1>Cadastro de mercadoria</h1>
+            </div>
+
+            <div class="central-column">
+
+                <form action="">
+                    <div class="row">
+                        <div class="productID">
+                            <label for="productID">ID Produto</label>
+                            <input type="text" id="productID" class="inputID" name="productID" maxlength="5" readonly>
+                        </div>
+                        <div class="description">
+                            <label for="description">Descrição do produto</label>
+                            <input type="text" id="description" name="description" maxlength="20" required style="text-transform: uppercase;">
+                        </div>
+                        <div class="quantity">
+                            <label for="quantity">Quantidade</label>
+                            <input type="number" id="quantity" name="quantity" maxlength="100" required value="1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="category">
+                            <label for="category">Categoria</label>
+                            <select name="category" id="category" class="category"  required>
+                                <option value="masculino" selected>Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="unissex">Unissex</option>
+                            </select>
+                        </div>
+                        <div class="price">
+                            <label for="price">Preço</label>
+                            <input type="text" id="price" name="price" placeholder="R$ 00,00">
+                        </div>
+                        <div class="size">
+                            <label for="size">Tamanho</label>
+                            <select name="size" id="size" class="size" required>
+                                <option value="PP">PP</option>
+                                <option value="P">P</option>
+                                <option value="M" selected>M</option>
+                                <option value="G">G</option>
+                                <option value="GG">GG</option>
+                            </select>
+                        </div>
+                        <div class="color">
+                            <label for="color">Cor</label>
+                            <input type="text" id="color" class="color" name="color" maxlength="10" required style="text-transform: uppercase;">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row-icons">
+                            <!--<i class="fas fa-cart-plus"></i>-->
+                    
+                            <!--<i class="fas fa-plus-circle" id="addBtn"></i>-->
+                            <i class="fas fa-save" id="addBtn"></i>
+                            <i class="fas fa-trash-alt" id="clearBtn"></i>
+                    
+                        </div>
+                        <div class="row-back">
+                            <a href="../../index.html" class="back">Menu</a>
+                        </div>
+                    </div>
+                </form>
+            </div><!--central-column-->
+
+
+        </div>
+    </main>
+    <script type="module" src="cadastro-mercadoria.js"></script>
+</body>
+</html>

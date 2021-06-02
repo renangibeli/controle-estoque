@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ab9666b33.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <link rel="stylesheet" href="estoque.css">
+    <title>Estoque</title>
+</head>
+<body>
+    <main>
+        <div class="main">
+            <div class="header-banner">
+                <h1>Estoque</h1>
+            </div>  
+
+            <div class="main-table" id="mainTable">
+                
+            </div><!--main-table-->
+            
+            <div class='column' id="displayNone">
+                <p>Carregando dados...</p>
+                <br>
+                <div class="spinner" id="spinner">
+                
+                </div>
+            </div>
+
+                <div class="column">
+                    <div class="row-icons">
+                        <i class="fas fa-print"></i>
+                        <i class="fas fa-file-excel" id="excelBtn"></i>
+                    </div>
+                    <div class="row-back">
+                        <a href="../../index.html" class="back">Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../variaveis.js"></script>
+    <script src="estoque.js"></script>
+
+    <script type="text/javascript" src="../services/tableToExcel.js"></script>
+    <script>
+        const excelBtn = document.querySelector('#excelBtn')
+
+        excelBtn.addEventListener('click', () => TableToExcel.convert(document.querySelector('#mainTable'),
+         {
+            name: "estoque.xlsx",
+            sheet: {
+                name: "Planilha 1",
+            }
+        }))
+    </script>
+</body>
+</html>
