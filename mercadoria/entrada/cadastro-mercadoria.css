@@ -151,12 +151,12 @@ main{
     transform: scale(1.3)
 }
 
-.fa-save{
+.fa-check-circle{
     color: rgba(0, 128, 0);
 }
 
 
-.fa-trash-alt{
+.fa-times-circle{
     color: rgba(128, 0, 0);
 }
 

@@ -18,89 +18,125 @@ axios.get(`${server}/estoque`)
         spinner.setAttribute('style', 'display: none')
         mainTable.appendChild(p)
     } else {
+        const table = document.createElement('table')
+        table.setAttribute('data-cols-width', '40')
+        table.setAttribute('id', 'table')
 
-    const table = document.createElement('table')
-    table.setAttribute('data-cols-width', '40')
-
-    const thead = document.createElement('thead')
-    table.appendChild(thead)
-    
-    const trHead = document.createElement('tr')
-    thead.appendChild(trHead)
-
-    const tableFields = ['ID', 'Descrição', 'Quantidade', 'Categoria', 'Custo', 'Venda', 'Tamanho', 'Cor']
-
-    for (let i in tableFields){
-        let tdHead = document.createElement('td')
-        tdHead.innerHTML = tableFields[i]
-        trHead.appendChild(tdHead)
-        tdHead.setAttribute('data-fill-color', '808080')
-        tdHead.setAttribute('data-f-color', 'f5f5f5')
-        tdHead.setAttribute('data-f-bold', true)
-        tdHead.setAttribute('data-b-a-s', 'thin')
-    }
-
-    const tbody = document.createElement('tbody')
-    
-    result.map(product => {
-        const tr = document.createElement('tr')
+        const thead = document.createElement('thead')
+        table.appendChild(thead)
         
-        //id
-        const tdId = document.createElement('td')
-        tdId.innerHTML = product.id
-        tdId.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdId)
+        const trHead = document.createElement('tr')
+        thead.appendChild(trHead)
 
-        //descrição
-        const tdDescription = document.createElement('td')
-        tdDescription.innerHTML = product.description
-        tdDescription.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdDescription)
+        const tableFields = ['ID', 'Descrição', 'Quantidade', 'Categoria', 'Custo', 'Venda', 'Tamanho', 'Cor']
 
-        //quantidade
-        const tdQuantity = document.createElement('td')
-        tdQuantity.innerHTML = product.quantity
-        tdQuantity.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdQuantity)
+        for (let i in tableFields){
+            let thHead = document.createElement('th')
+            thHead.innerHTML = tableFields[i]
+            thHead.setAttribute('data-fill-color', '808080')
+            thHead.setAttribute('data-f-color', 'f5f5f5')
+            thHead.setAttribute('data-f-bold', true)
+            thHead.setAttribute('data-b-a-s', 'thin')
+            trHead.appendChild(thHead)
+        }
 
-        //categoria
-        const tdCategory = document.createElement('td')
-        tdCategory.innerHTML = product.category
-        tdCategory.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdCategory)
+        const tbody = document.createElement('tbody')
+        
+        result.map(product => {
+            const tr = document.createElement('tr')
+            
+            //id
+            const tdId = document.createElement('td')
+            tdId.innerHTML = product.id
+            tdId.setAttribute('data-b-a-s', 'thin')
+            tdId.setAttribute('style', 'text-align: right')
+            tr.appendChild(tdId)
 
-        //Preço de compra
-        const tdBuyPrice = document.createElement('td')
-        const formatedBuyPrice = clientService.formatCurrency(product.buyPrice) 
-        tdBuyPrice.innerHTML = formatedBuyPrice
-        tdBuyPrice.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdBuyPrice)
+            //descrição
+            const tdDescription = document.createElement('td')
+            tdDescription.innerHTML = product.description
+            tdDescription.setAttribute('data-b-a-s', 'thin')
+            tdDescription.setAttribute('style', 'text-align: left')
+            tr.appendChild(tdDescription)
 
-        //preço de venda
-        const tdSellPrice = document.createElement('td')
-        const formatedSellPrice = clientService.formatCurrency(product.sellPrice)
-        tdSellPrice.innerHTML = formatedSellPrice
-        tdSellPrice.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdSellPrice)
+            //quantidade
+            const tdQuantity = document.createElement('td')
+            tdQuantity.innerHTML = product.quantity
+            tdQuantity.setAttribute('data-b-a-s', 'thin')
+            tr.appendChild(tdQuantity)
 
-        //tamanho
-        const tdSize = document.createElement('td')
-        tdSize.innerHTML = product.size
-        tdSize.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdSize)
+            //categoria
+            const tdCategory = document.createElement('td')
+            tdCategory.innerHTML = product.category
+            tdCategory.setAttribute('data-b-a-s', 'thin')
+            tr.appendChild(tdCategory)
 
-        //cor
-        const tdColor = document.createElement('td')
-        tdColor.innerHTML = product.color
-        tdColor.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdColor)
+            //Preço de compra
+            const tdBuyPrice = document.createElement('td')
+            const formatedBuyPrice = clientService.formatCurrency(product.buyPrice) 
+            tdBuyPrice.innerHTML = formatedBuyPrice
+            tdBuyPrice.setAttribute('data-b-a-s', 'thin')
+            tr.appendChild(tdBuyPrice)
 
-        tbody.appendChild(tr)
-    })
+            //preço de venda
+            const tdSellPrice = document.createElement('td')
+            const formatedSellPrice = clientService.formatCurrency(product.sellPrice)
+            tdSellPrice.innerHTML = formatedSellPrice
+            tdSellPrice.setAttribute('data-b-a-s', 'thin')
+            tr.appendChild(tdSellPrice)
 
-    table.appendChild(tbody)
-    spinner.setAttribute('style', 'display: none')
-    mainTable.appendChild(table)
+            //tamanho
+            const tdSize = document.createElement('td')
+            tdSize.innerHTML = product.size
+            tdSize.setAttribute('data-b-a-s', 'thin')
+            tr.appendChild(tdSize)
+
+            //cor
+            const tdColor = document.createElement('td')
+            tdColor.innerHTML = product.color
+            tdColor.setAttribute('data-b-a-s', 'thin')
+            tdColor.setAttribute('style', 'text-align: left')
+            tr.appendChild(tdColor)
+
+            tbody.appendChild(tr)
+        })
+
+        table.appendChild(tbody)
+        spinner.setAttribute('style', 'display: none')
+        mainTable.appendChild(table)
+
+
+        // -->> INICIO - REVISAR PARA TRANSFORMAR EM ASSINCRONO APÓS CRIAÇÃO DA TABELA <<--
+        let lines = table.getElementsByTagName("tr")
+
+        for(let i = 0; i < lines.length; i++){
+            let line = lines[i];
+
+            line.addEventListener("click", function(){
+                clientService.selLines(this, false)
+            })
+        }
+
+        const editBtn = document.querySelector("#editBtn")
+
+        editBtn.addEventListener("click", () => {
+            const selecteds = table.getElementsByClassName("selected")
+
+            //Verificar se está selecionado
+            if(selecteds.length < 1){
+                alert("Selecione pelo menos uma linha")
+                return false;
+            } else {
+                const centralColumn = document.querySelector('#centralColumn')
+                centralColumn.setAttribute('style', 'display: flex')
+                for(let i = 0; i < selecteds.length; i++){
+                    var selected = selecteds[i]
+                    selected = selected.getElementsByTagName("td")
+                    console.log(selected)
+                }
+            }
+        })
     }
 })
 .catch(error => console.log(error))
+

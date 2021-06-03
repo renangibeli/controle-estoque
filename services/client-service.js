@@ -64,10 +64,23 @@ function unFormatCurrency(price){
   return Number(price.replace(/\D/g, '')) / 100
 }
 
+function selLines(line, nLines){
+  if(!nLines){
+    let lines = line.parentElement.getElementsByTagName("tr");
+    for(let i = 0; i < lines.length; i++){
+      let line_ = lines[i];
+      line_.classList.remove("selected");  
+    }
+  }
+  line.classList.toggle("selected");
+ }
+
+
   export const clientService = {
       getRandomIntInclusive,
       calculateDigit,
       generateBarcode,
       formatCurrency,
-      unFormatCurrency
+      unFormatCurrency,
+      selLines
   }

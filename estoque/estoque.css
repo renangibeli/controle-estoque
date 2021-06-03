@@ -46,19 +46,42 @@ main{
     text-align: center;
 }
 
+table{
+    margin: 20px 0;
+    box-shadow: 0 5px 30px darkgrey;
+}
+
 table, th, td {
     font-size: 16px;
-    border: 1px solid black; 
     border-collapse: collapse;
-    padding: 8px 15px;
+    padding: 5px 10px;
     text-align: center;
     font-weight: normal;
 }
 
-thead{
-    background-color: rgba(0, 0, 0, 0.5);
+th{
+    background-color: rgba(0, 0, 0, 0.750);
     color: whitesmoke;
 }
+
+tr td{
+    cursor: pointer;
+}
+
+tr:nth-child(odd){
+    background-color: lightgray;
+  }
+
+tr:hover td{
+    background-color: #fac696;
+    color: black;
+    transition: .2s ease-in-out;
+}
+
+ tr.selected td{
+    background-color: #71afff;
+    color: black;
+  }
 
 .spinner{
     border: 8px solid rgba(0, 0, 0, 0.5);
@@ -103,15 +126,13 @@ thead{
     transform: scale(1.3)
 }
 
-.fa-print{
+.fa-print, .fa-edit{
     color: rgba(0, 0, 0, 0.750);
 }
 
 .fa-file-excel{
     color: rgb(0, 128, 0);
 }
-
-
 
 .back{
     padding-top: 15px;
