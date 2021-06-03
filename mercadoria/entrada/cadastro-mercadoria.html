@@ -29,7 +29,7 @@
                         </div>
                         <div class="description">
                             <label for="description">Descrição do produto</label>
-                            <input type="text" id="description" name="description" maxlength="20" required style="text-transform: uppercase;">
+                            <input type="text" id="description" name="description" maxlength="50" required style="text-transform: uppercase;">
                         </div>
                         <div class="quantity">
                             <label for="quantity">Quantidade</label>
@@ -40,14 +40,18 @@
                         <div class="category">
                             <label for="category">Categoria</label>
                             <select name="category" id="category" class="category"  required>
-                                <option value="masculino" selected>Masculino</option>
-                                <option value="feminino">Feminino</option>
-                                <option value="unissex">Unissex</option>
+                                <option value="Masculino" selected>Masculino</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Unissex">Unissex</option>
                             </select>
                         </div>
                         <div class="price">
-                            <label for="price">Preço</label>
-                            <input type="text" id="price" name="price" placeholder="R$ 00,00">
+                            <label for="buyPrice">Custo</label>
+                            <input type="text" id="buyPrice" name="buyPrice" placeholder="R$ 00,00">
+                        </div>
+                        <div class="price">
+                            <label for="sellPrice">Venda</label>
+                            <input type="text" id="sellPrice" name="sellPrice" placeholder="R$ 00,00">
                         </div>
                         <div class="size">
                             <label for="size">Tamanho</label>
@@ -83,6 +87,8 @@
 
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../variaveis.js"></script>
     <script type="module" src="cadastro-mercadoria.js"></script>
 </body>
 </html>

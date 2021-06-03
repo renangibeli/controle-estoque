@@ -49,8 +49,25 @@ function generateBarcode(){
       });
     }
 
+function formatCurrency(price){
+  const defaultFormat = Intl.NumberFormat("pt-br", {
+      currency: "BRL",
+      style: "currency"
+  })
+
+  return defaultFormat.format(price)
+}
+  
+function unFormatCurrency(price){
+  //regular expression (regex)
+  //R$ 1000,10 -> 100010 -> 1000,10
+  return Number(price.replace(/\D/g, '')) / 100
+}
+
   export const clientService = {
       getRandomIntInclusive,
       calculateDigit,
-      generateBarcode
+      generateBarcode,
+      formatCurrency,
+      unFormatCurrency
   }

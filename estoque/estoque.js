@@ -1,20 +1,36 @@
+import { clientService } from '../services/client-service.js'
+
 axios.get(`${server}/estoque`)
 .then((response) => {
     const result = response.data
-    let mainTable = document.querySelector('#mainTable')
 
-    let table = document.createElement('table')
+    const mainTable = document.querySelector('#mainTable')
+    const spinner = document.querySelector('#displayNone')
+
+    if(result.length === 0){
+        const p = document.createElement('p')
+        p.innerHTML = 'Não existem produtos cadastrados'
+        p.setAttribute('style', 'padding: 20px')
+
+        const rowIcons = document.querySelector('#rowIcons')
+        rowIcons.setAttribute('style', 'display: none')
+
+        spinner.setAttribute('style', 'display: none')
+        mainTable.appendChild(p)
+    } else {
+
+    const table = document.createElement('table')
     table.setAttribute('data-cols-width', '40')
 
-    let thead = document.createElement('thead')
+    const thead = document.createElement('thead')
     table.appendChild(thead)
     
-    let trHead = document.createElement('tr')
+    const trHead = document.createElement('tr')
     thead.appendChild(trHead)
 
     const tableFields = ['ID', 'Descrição', 'Quantidade', 'Categoria', 'Custo', 'Venda', 'Tamanho', 'Cor']
 
-    for (i in tableFields){
+    for (let i in tableFields){
         let tdHead = document.createElement('td')
         tdHead.innerHTML = tableFields[i]
         trHead.appendChild(tdHead)
@@ -24,55 +40,57 @@ axios.get(`${server}/estoque`)
         tdHead.setAttribute('data-b-a-s', 'thin')
     }
 
-    let tbody = document.createElement('tbody')
+    const tbody = document.createElement('tbody')
     
     result.map(product => {
-        let tr = document.createElement('tr')
+        const tr = document.createElement('tr')
         
         //id
-        let tdId = document.createElement('td')
+        const tdId = document.createElement('td')
         tdId.innerHTML = product.id
         tdId.setAttribute('data-b-a-s', 'thin')
         tr.appendChild(tdId)
 
         //descrição
-        let tdName = document.createElement('td')
-        tdName.innerHTML = product.name
-        tdName.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdName)
+        const tdDescription = document.createElement('td')
+        tdDescription.innerHTML = product.description
+        tdDescription.setAttribute('data-b-a-s', 'thin')
+        tr.appendChild(tdDescription)
 
         //quantidade
-        let tdQuantity = document.createElement('td')
+        const tdQuantity = document.createElement('td')
         tdQuantity.innerHTML = product.quantity
         tdQuantity.setAttribute('data-b-a-s', 'thin')
         tr.appendChild(tdQuantity)
 
         //categoria
-        let tdCategory = document.createElement('td')
+        const tdCategory = document.createElement('td')
         tdCategory.innerHTML = product.category
         tdCategory.setAttribute('data-b-a-s', 'thin')
         tr.appendChild(tdCategory)
 
         //Preço de compra
-        let tdPriceBuy = document.createElement('td')
-        tdPriceBuy.innerHTML = product.priceBuy
-        tdPriceBuy.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdPriceBuy)
+        const tdBuyPrice = document.createElement('td')
+        const formatedBuyPrice = clientService.formatCurrency(product.buyPrice) 
+        tdBuyPrice.innerHTML = formatedBuyPrice
+        tdBuyPrice.setAttribute('data-b-a-s', 'thin')
+        tr.appendChild(tdBuyPrice)
 
         //preço de venda
-        let tdPriceSell = document.createElement('td')
-        tdPriceSell.innerHTML = product.priceSell
-        tdPriceSell.setAttribute('data-b-a-s', 'thin')
-        tr.appendChild(tdPriceSell)
+        const tdSellPrice = document.createElement('td')
+        const formatedSellPrice = clientService.formatCurrency(product.sellPrice)
+        tdSellPrice.innerHTML = formatedSellPrice
+        tdSellPrice.setAttribute('data-b-a-s', 'thin')
+        tr.appendChild(tdSellPrice)
 
         //tamanho
-        let tdSize = document.createElement('td')
+        const tdSize = document.createElement('td')
         tdSize.innerHTML = product.size
         tdSize.setAttribute('data-b-a-s', 'thin')
         tr.appendChild(tdSize)
 
         //cor
-        let tdColor = document.createElement('td')
+        const tdColor = document.createElement('td')
         tdColor.innerHTML = product.color
         tdColor.setAttribute('data-b-a-s', 'thin')
         tr.appendChild(tdColor)
@@ -81,8 +99,8 @@ axios.get(`${server}/estoque`)
     })
 
     table.appendChild(tbody)
-    let spinner = document.querySelector('#displayNone')
     spinner.setAttribute('style', 'display: none')
     mainTable.appendChild(table)
+    }
 })
 .catch(error => console.log(error))

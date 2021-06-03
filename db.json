@@ -1,36 +1,48 @@
 {
-  "estoque": [{
-      "id": "00001",
-      "name": "CAMISETA GOLA V",
-      "quantity": 1,
+  "estoque": [
+    {
+      "id": "11391",
+      "description": "CAMISETA GOLA V",
+      "quantity": 2,
       "category": "Masculino",
-      "priceBuy": 119.90,
-      "priceSell": 80.00,
+      "buyPrice": 29.99,
+      "sellPrice": 29.99,
       "size": "M",
-      "color": "Preto"
+      "color": "PRETO"
     },
     {
-      "id": "00002",
-      "name": "CAMISETA GOLA V",
-      "quantity": 1,
+      "id": "64141",
+      "description": "CAMISETA GOLA V",
+      "quantity": 4,
       "category": "Masculino",
-      "priceBuy": 15.00,
-      "priceSell": 39.90,
+      "buyPrice": 29.99,
+      "sellPrice": 29.99,
       "size": "M",
-      "color": "Preto"
+      "color": "VERMELHO"
     },
     {
-      "id": "00003",
-      "name": "CAMISETA GOLA V",
+      "id": "41390",
+      "description": "CAMISETA GOLA V",
       "quantity": 1,
       "category": "Masculino",
-      "priceBuy": 12.00,
-      "priceSell": 45.90,
+      "buyPrice": 29.99,
+      "sellPrice": 29.99,
       "size": "M",
-      "color": "Preto"
+      "color": "AZUL"
+    },
+    {
+      "id": "06933",
+      "description": "CAMISETA GOLA V X",
+      "quantity": 1,
+      "category": "Masculino",
+      "buyPrice": 29.99,
+      "sellPrice": 49.99,
+      "size": "M",
+      "color": "PRETO"
     }
   ],
-  "vendedores": [{
+  "vendedores": [
+    {
       "name": "Renan Gibeli",
       "cpf": "406.456.678-54"
     },
