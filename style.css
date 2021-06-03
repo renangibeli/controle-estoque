@@ -7,19 +7,16 @@
 body{
     background-color: whitesmoke;
     font-family: 'Montserrat', sans-serif;
-}
-
-main{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
-    
 }
+
 
 .main{
     display: flex;
-    width: 1280px;
+    margin-top: 60px;
+    width: 1800px;
     height: 800px;
     background-color: #7487b8;
     border-radius: 2rem;
@@ -58,7 +55,7 @@ main{
 .row-items-details{
     display: flex;
     flex-direction: column;
-    width: calc(100%/3);
+    width: calc(100%/6);
     height: 100%;
     color: rgba(245, 245, 245, 0.5);
     display: flex;
