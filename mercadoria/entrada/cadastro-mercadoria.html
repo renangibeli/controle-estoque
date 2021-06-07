@@ -33,14 +33,15 @@
                         </div>
                         <div class="quantity">
                             <label for="quantity">Quantidade</label>
-                            <input type="number" id="quantity" name="quantity" required value="1" min="0">  
+                            <input type="number" id="quantity" name="quantity" required value="0" min="0">  
                         </div>
                     </div>
                     <div class="row">
                         <div class="category">
                             <label for="category">Categoria</label>
                             <select name="category" id="category" class="category"  required>
-                                <option value="Masculino" selected>Masculino</option>
+                                <option value="" selected></option>
+                                <option value="Masculino">Masculino</option>
                                 <option value="Feminino">Feminino</option>
                                 <option value="Unissex">Unissex</option>
                             </select>
@@ -56,9 +57,10 @@
                         <div class="size">
                             <label for="size">Tamanho</label>
                             <select name="size" id="size" class="size" required>
+                                <option value="" selected></option>
                                 <option value="PP">PP</option>
                                 <option value="P">P</option>
-                                <option value="M" selected>M</option>
+                                <option value="M">M</option>
                                 <option value="G">G</option>
                                 <option value="GG">GG</option>
                             </select>
@@ -70,10 +72,14 @@
                     </div>
                     <div class="column">
                         <div class="row-icons">
-
-                            <i class="fas fa-check-circle" id="addBtn"></i>
-                            <i class="fas fa-times-circle" id="clearBtn"></i>
-                    
+                            <div class="row-item">
+                                <i class="fas fa-check-circle" id="addBtn"></i>
+                                <p>Salvar</p>
+                            </div>
+                            <div class="row-item">
+                                <i class="fas fa-times-circle" id="clearBtn"></i>
+                                <p>Limpar</p>
+                            </div>
                         </div>
                         <div class="row-back">
                             <a href="../../index.html" class="back">Menu</a>

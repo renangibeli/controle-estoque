@@ -68,6 +68,7 @@ main{
 .inputID{
     color: rgba(0, 0, 0, 0.650);
     font-weight: bolder;
+    opacity: 0.5;
 }
 
 .description{
@@ -136,10 +137,14 @@ main{
     display: flex;
 }
 
-.row-icons i{
+.row-item{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.row-icons i{
     padding: 20px;
     margin-left: 10px;
     width: 5rem;
@@ -155,6 +160,9 @@ main{
     color: rgba(0, 128, 0);
 }
 
+.row-icons p{
+    font-size: 16px;
+}
 
 .fa-times-circle{
     color: rgba(128, 0, 0);
@@ -168,7 +176,7 @@ main{
 
 
 .back{
-    padding-top: 15px;
+    padding-top: 35px;
     text-decoration: none;
     font-size: 1.5rem;
     color: rgba(0, 0, 0, 0.466)

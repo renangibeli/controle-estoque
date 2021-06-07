@@ -18,6 +18,7 @@ axios.get(`${server}/estoque`)
         spinner.setAttribute('style', 'display: none')
         mainTable.appendChild(p)
     } else {
+
         const table = document.createElement('table')
         table.setAttribute('data-cols-width', '40')
         table.setAttribute('id', 'table')
@@ -118,22 +119,62 @@ axios.get(`${server}/estoque`)
         }
 
         const editBtn = document.querySelector("#editBtn")
+        
 
         editBtn.addEventListener("click", () => {
-            const selecteds = table.getElementsByClassName("selected")
+            const selecteds = table.querySelectorAll(".selected")
 
             //Verificar se está selecionado
             if(selecteds.length < 1){
                 alert("Selecione pelo menos uma linha")
-                return false;
             } else {
-                const centralColumn = document.querySelector('#centralColumn')
-                centralColumn.setAttribute('style', 'display: flex')
-                for(let i = 0; i < selecteds.length; i++){
-                    var selected = selecteds[i]
-                    selected = selected.getElementsByTagName("td")
-                    console.log(selected)
-                }
+                let selected = selecteds[0]
+                selected = selected.querySelectorAll("td")
+
+                const productID = document.querySelector('#productID')
+                productID.value = selected[0].innerHTML
+                const description = document.querySelector('#description')
+                description.value = selected[1].innerHTML
+                const quantity = document.querySelector('#quantity')
+                quantity.value = selected[2].innerHTML
+                const category = document.querySelector('#category')
+                category.value = selected[3].innerHTML
+                const buyPrice = document.querySelector('#buyPrice')
+                buyPrice.value = selected[4].innerHTML.replace('&nbsp;', ' ')
+                const sellPrice = document.querySelector('#sellPrice')  
+                sellPrice.value = selected[5].innerHTML.replace('&nbsp;', ' ')
+                const size = document.querySelector('#size')
+                size.value = selected[6].innerHTML
+                const color = document.querySelector('#color')
+                color.value = selected[7].innerHTML
+
+                const modal = document.querySelector('#modal-container')
+                modal.classList.add('show')
+    
+                const clearBtn = document.querySelector("#clearBtn")
+                clearBtn.addEventListener('click', () => {
+                    modal.classList.remove('show')
+                })
+
+                const addBtn = document.querySelector('#addBtn')
+                addBtn.addEventListener('click', () => {
+                    const unformatedBuyPrice =  clientService.unFormatCurrency(buyPrice.value) 
+                    const unformatedSellPrice =  clientService.unFormatCurrency(sellPrice.value) 
+                    const formatedDescription = description.value.toUpperCase()
+                    const formatedColor = color.value.toUpperCase()
+
+                    axios.patch(`${server}/estoque/${productID.value}`, {
+                        "description": formatedDescription,
+                        "quantity": Number(quantity.value),
+                        "category": category.value,
+                        "buyPrice": unformatedBuyPrice,
+                        "sellPrice": unformatedSellPrice,
+                        "size": size.value,
+                        "color": formatedColor
+                    })
+                    .then(response => window.alert(`Modificação do produto ${productID.value} - ${formatedDescription} realizada com sucesso!`))
+                    .catch(error => console.log(error))
+                })
             }
         })
     }

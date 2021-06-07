@@ -45,11 +45,13 @@ let clearBtn = document.querySelector('#clearBtn')
 clearBtn.addEventListener('click', () => {
 
     description.value = ''
-    quantity.value = 1
-    category.value = 'masculino'
-    price.value = ''
-    size.value = 'M'
+    quantity.value = 0
+    category.value = ''
+    buyPrice.value = ''
+    sellPrice.value = ''
+    size.value = ''
     color.value = ''
+
 })
 
 
