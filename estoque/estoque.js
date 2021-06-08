@@ -50,14 +50,14 @@ axios.get(`${server}/estoque`)
             const tdId = document.createElement('td')
             tdId.innerHTML = product.id
             tdId.setAttribute('data-b-a-s', 'thin')
-            tdId.setAttribute('style', 'text-align: right')
+            /* tdId.setAttribute('style', 'text-align: right') */
             tr.appendChild(tdId)
 
             //descrição
             const tdDescription = document.createElement('td')
             tdDescription.innerHTML = product.description
             tdDescription.setAttribute('data-b-a-s', 'thin')
-            tdDescription.setAttribute('style', 'text-align: left')
+            /* tdDescription.setAttribute('style', 'text-align: left') */
             tr.appendChild(tdDescription)
 
             //quantidade
@@ -96,17 +96,16 @@ axios.get(`${server}/estoque`)
             const tdColor = document.createElement('td')
             tdColor.innerHTML = product.color
             tdColor.setAttribute('data-b-a-s', 'thin')
-            tdColor.setAttribute('style', 'text-align: left')
+            /* tdColor.setAttribute('style', 'text-align: left') */
             tr.appendChild(tdColor)
 
             tbody.appendChild(tr)
         })
-
+        
         table.appendChild(tbody)
         spinner.setAttribute('style', 'display: none')
         mainTable.appendChild(table)
-
-
+    
         // -->> INICIO - REVISAR PARA TRANSFORMAR EM ASSINCRONO APÓS CRIAÇÃO DA TABELA <<--
         let lines = table.getElementsByTagName("tr")
 

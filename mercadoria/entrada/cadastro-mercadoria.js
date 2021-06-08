@@ -47,8 +47,8 @@ clearBtn.addEventListener('click', () => {
     description.value = ''
     quantity.value = 0
     category.value = ''
-    buyPrice.value = ''
-    sellPrice.value = ''
+    buyPrice.value = 'R$ '
+    sellPrice.value = 'R$ '
     size.value = ''
     color.value = ''
 
