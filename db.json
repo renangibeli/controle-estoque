@@ -1,203 +1,256 @@
 {
   "estoque": [
     {
-      "id": "11391",
-      "description": "CAMISETA GOLA V",
-      "quantity": 1,
-      "category": "Masculino",
+      "id": "98831",
+      "description": "PRODUTO TESTE",
+      "stock": {
+        "quantity": 1,
+        "entry": 1,
+        "out": 0
+      },
+      "gender": "Masculino",
       "buyPrice": 29.99,
-      "sellPrice": 49.99,
+      "sellPrice": 89.9,
+      "size": "M",
+      "color": "AMARELO"
+    },
+    {
+      "id": "68153",
+      "description": "CAMISETA GOLA V",
+      "stock": {
+        "quantity": 2,
+        "entry": 2,
+        "out": 0
+      },
+      "gender": "Masculino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "PP",
+      "color": "AMARELO"
+    },
+    {
+      "id": "65585",
+      "description": "CAMISETA GOLA V",
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
+      "size": "P",
       "color": "PRETO"
     },
     {
-      "id": "64141",
+      "id": "65586",
       "description": "CAMISETA GOLA V",
-      "quantity": 4,
-      "category": "Masculino",
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
       "buyPrice": 29.99,
-      "sellPrice": 29.99,
-      "size": "M",
-      "color": "VERMELHO"
-    },
-    {
-      "id": "41390",
-      "description": "CAMISETA GOLA V",
-      "quantity": 1,
-      "category": "Feminino",
-      "buyPrice": 29.99,
-      "sellPrice": 49.99,
-      "size": "M",
-      "color": "AZUL"
-    },
-    {
-      "id": "06933",
-      "description": "CAMISETA GOLA V X",
-      "quantity": 1,
-      "category": "Masculino",
-      "buyPrice": 29.99,
-      "sellPrice": 49.99,
-      "size": "M",
+      "sellPrice": 99.99,
+      "size": "P",
       "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65587",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65588",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65589",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65590",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65591",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65592",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
-    },   {
-      "id": "56338",
-      "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
-      "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65593",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65594",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65595",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65596",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65597",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65598",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65599",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     },
     {
-      "id": "56338",
+      "id": "65600",
       "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
+      "stock": {
+        "quantity": 4,
+        "entry": 4,
+        "out": 0
+      },
+      "gender": "Feminino",
+      "buyPrice": 29.99,
+      "sellPrice": 99.99,
       "size": "P",
-      "color": "VERDE"
-    },
-    {
-      "id": "56338",
-      "description": "CAMISETA GOLA V",
-      "quantity": 2,
-      "category": "Masculino",
-      "buyPrice": 25.99,
-      "sellPrice": 49.99,
-      "size": "P",
-      "color": "VERDE"
+      "color": "PRETO"
     }
   ],
   "vendedores": [

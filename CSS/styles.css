@@ -29,7 +29,6 @@ main {
   height: 800px;
   background-color: #7487b8;
   border-radius: 2rem;
-  opacity: 0.9;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -62,7 +61,7 @@ main .row-items-details {
   flex-direction: column;
   width: calc(100%/6);
   height: 100%;
-  color: #f5f5f580;
+  color: #f5f5f5ce;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,7 +191,7 @@ main .row-items-details i {
   box-shadow: 0 5px 30px darkgrey;
 }
 .stock table, .stock th, .stock td {
-  font-size: 1rem;
+  font-size: 0.9rem;
   border-collapse: collapse;
   padding: 5px 10px;
   text-align: center;
@@ -200,7 +199,7 @@ main .row-items-details i {
 }
 .stock tbody {
   display: block;
-  height: 344px;
+  height: 390px;
   overflow: auto;
 }
 .stock thead, .stock tbody tr {
@@ -355,23 +354,42 @@ main .row-items-details i {
 .modal-container .row {
   display: flex;
   width: 100%;
-  padding: 15px 0;
+  padding: 0.9375rem 0;
+  text-align: left;
+}
+.modal-container .invalid-input {
+  border: thin solid #c20202;
+  color: #c20202;
+}
+.modal-container .invalid-label {
+  color: #c20202;
 }
 .modal-container .productID {
-  width: 50%;
+  width: 30%;
 }
-.modal-container .inputID {
+.modal-container .productID input {
   color: black;
   font-weight: bolder;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 .modal-container .description {
-  width: 100%;
-  padding-left: 10px;
+  width: 40%;
+  padding-left: 0.625rem;
 }
 .modal-container .quantity {
-  width: 50%;
-  padding-left: 10px;
+  width: 30%;
+  padding-left: 0.625rem;
+}
+.modal-container .quantity .input-quantity {
+  display: flex;
+  width: 100%;
+  padding-top: 0.5625rem;
+}
+.modal-container .quantity .input-quantity input {
+  color: black;
+  font-weight: bolder;
+  opacity: 0.3;
+  margin-right: 0.625rem;
 }
 .modal-container .category {
   width: 25%;
@@ -477,21 +495,29 @@ main .row-items-details i {
   display: flex;
   width: 100%;
   padding: 15px 0;
+  text-align: left;
+}
+.register .invalid-input {
+  border: thin solid #c20202;
+  color: #c20202;
+}
+.register .invalid-label {
+  color: #c20202;
 }
 .register .productID {
-  width: 50%;
+  width: 20%;
 }
 .register .inputID {
   color: #000000a6;
   font-weight: bolder;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 .register .description {
   width: 100%;
   padding-left: 10px;
 }
 .register .quantity {
-  width: 50%;
+  width: 20%;
   padding-left: 10px;
 }
 .register .category {
@@ -520,7 +546,7 @@ main .row-items-details i {
 }
 .register .central-column select,
 .register .central-column input {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "Montserrat", sans-serif;
 }
 .register .central-column input {
@@ -546,8 +572,7 @@ main .row-items-details i {
   flex-direction: column;
 }
 .register .row-icons i {
-  padding: 20px;
-  margin-left: 10px;
+  padding: 10px;
   width: 5rem;
 }
 .register .row-icons i:hover {
@@ -558,11 +583,11 @@ main .row-items-details i {
 .register .fa-check-circle {
   color: green;
 }
-.register .row-icons p {
-  font-size: 16px;
-}
 .register .fa-times-circle {
   color: maroon;
+}
+.register .row-icons p {
+  font-size: 1.2rem;
 }
 .register .row-back {
   display: flex;
