@@ -80,7 +80,7 @@ main{
     .row-items-details:hover{
         color: whitesmoke;
         opacity: 0.9;
-        background-color: #00000080;
+        background-color: rgba(0, 0, 0, 0.5);
         transition: .3s  ease-in;
         transform: scale(1.1)
     }
@@ -96,261 +96,337 @@ main{
         height: 70%;
         font-size: 8rem;
     }
-}
 
-//gerar de código de barras
-.barcode{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #7487B8;
-    width: 1800px;
-    height: 800px;
-    border-radius: 2rem;
-    margin-top: 60px;
-    box-shadow: 0 0 1rem black;
-
-    .barcode-main{
+    .global-container-options{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         width: 80%;
         height: 90%;
-        font-size: 2rem;
         background-color: whitesmoke;
-        padding: 30px;
+        padding: 20px;
         color: rgba(0, 0, 0, 0.5);
         border-radius: 2rem;
-    }
-    
-    .header-banner{
-        display: flex;
-        padding: 30px;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-    
-    .central-column{
-        display: block;
-    }
-    
-    .central-column  label,
-    .central-column  select,
-    .central-column  input{
-        display: block;
-        width: 100%;
-        padding-bottom: 10px;
-        text-align: left;
-    }
-    
-    .central-column select,
-    .central-column input{
-        margin-bottom: 5px;
-        font-size: 16px;
-        padding: 2px;
-        font-family: 'Montserrat', sans-serif;
-    }
-    
-    .btn{
-        padding: 15px 30px;
-        margin: 20px;
-        border-radius: 30px;
-        background-color: #B8A474;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        border: 0;
-        font-weight: bold;
-    }
-    
-    .btn:hover{
-        background-color: #6B592E;
-        transition: .3s ease-in;
-        transform: scale(1.1)
-    }
-    
-    .barcode-area{
-        border: 1px solid rgba(0, 0, 0, 0.467);   
-    }
-    
-    .back{
-        padding-top: 15px;
-        text-decoration: none;
-        font-size: 1.5rem;
-        color: rgba(0, 0, 0, 0.466)
-    }
-    
-    .back:hover{
-        color: black;
-        transition: .3s ease-in-out;
-        text-decoration: underline;
-        transform: scale(1.1)
-    }
-}
+        font-size: 2rem;
+        max-height: 90%;
 
-//estoque
-.stock{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    max-height: 90%;
-    width: 90%;
-    height: 90%;
-    background-color: whitesmoke;
-    padding: 20px;
-    color: rgba(0, 0, 0, 0.5);
-    border-radius: 2rem;
-    font-size: 2rem;
-
-    .header-banner{
-        display: flex;
-        padding: 20px;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-    
-    table{
-        margin: 20px 0;
-        box-shadow: 0 5px 30px darkgrey; 
-    }
-    
-    
-    table, th, td {
-        font-size: 0.9rem;
-        border-collapse: collapse;
-        padding: 5px 10px;
-        text-align: center;
-        font-weight: normal;
-    }
-    
-    tbody {
-        display: block;
-        height: 390px;
-        overflow: auto;
+        //------>>>>>> INICIO: REGISTRO DE PRODUTOS <<<<<<------
+        .header-banner{
+            display: flex;
+            padding: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
         
+        .central-column{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .row{
+            display: flex;
+            width: 100%;
+            padding: 15px 0;
+            text-align: left;
+
+            .input{
+                margin: 10px;
+            }
+    
+            input, select, label{
+                font-size: 1rem;
+                font-family: 'Montserrat', sans-serif;
+                padding: 5px;
+                width: 100%;
+            }
+    
+            label{
+                font-size: 1.5rem;
+            }
+    
+            input:read-only{
+                color: #000000a6;
+                font-weight: bolder;
+                opacity: 0.3;
+            }
+
+            //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO <<<<<<------
+            .productID{
+                width: 20%;
+            }
+            
+            
+            .description{
+                width: 100%;
+                padding-left: 10px;
+            }
+            
+            .quantity{
+                width: 20%;
+                padding-left: 10px;
+            }
+            
+            .category{
+                width: 25%;
+            }
+            
+            .price{
+                width: 25%;
+                padding-left: 10px;
+            }
+            
+            .size{
+                width: 25%;
+                padding-left: 10px;
+            }
+            
+            .size select{
+                padding: 0;
+            }
+            
+            .color{
+                width: 25%;
+                padding-left: 10px;
+            }
+
+            //------>>>>> FIM: ESPAÇAMENTO DE REGISTRO DE PRODUTOS <<<<<<------
+            
+            //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO VENDEDORES <<<<<<------
+            .name{
+                width: 40%;
+            }
+    
+            .cpf, .rg{
+                width: 10%;
+            }
+    
+            .birthday{
+                width: 15%;
+            }
+    
+            .cep{
+                width: 15%;
+            }
+    
+            .adress{
+                width: 50%;
+            }
+    
+            .number{
+                width: 10%;
+            }
+    
+            .comp{
+                width: 15%;
+            }
+    
+            .district{
+                width: 40%;
+            }
+    
+            .city{
+                width: 15%;
+            }
+    
+            .uf{
+                width: 5%;
+            }
+            //------>>>>> FIM: ESPAÇAMENTO DE REGISTRO VENDEDORES <<<<<<------
+        }
+
+        .contact{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+    
+            .telephone{
+                width: 10%;
+            }
+    
+            .cellphone{
+                width: 10%;
+            }
+        }
+    
+        .invalid-input{
+            border: thin solid #c20202;
+            color: #c20202;
+            
+        }
+    
+        .invalid-label{
+            color: #c20202;
+            
+        }
+        
+        .column{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .row-icons{
+            display: flex;
+        }
+        
+        .row-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .row-icons i{
+            padding: 10px;
+            width: 5rem;
+        }
+    
+        .row-icons i:hover{
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            transform: scale(1.3)
+        }
+    
+        .row-icons p{
+            font-size: 16px;
+        }
+     
+        .row-back{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back{
+            padding-top: 35px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, 0.5)
+        }
+        
+        .back:hover{
+            color: black;
+            transition: .3s ease-in-out;
+            text-decoration: underline;
+            transform: scale(1.1)
+        }
     }
-    
-    thead, tbody tr {
-        display: table;
-        width: 100%;
-        table-layout: fixed;/* even columns width , fix width of table too*/
-    }
-    
-    tbody::-webkit-scrollbar {
-        width: 5px;           
-    }
-    
-    tbody::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 20px;       
-    }
-    
-    tbody::-webkit-scrollbar-thumb {
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 20px;    
-    }
-    
-    tbody::-webkit-scrollbar-thumb:hover{
-        background-color: rgba(0, 0, 0, 0.75);
-    }
-    
-    th{
-        background-color: rgba(0, 0, 0, 0.750);
-        color: whitesmoke;
-    }
-    
-    tr td{
-        cursor: pointer;
-    }
-    
-    tr:nth-child(odd){
-        background-color: lightgray;
-      }
-    
-    tr:hover td{
-        background-color: #fac696;
-        color: black;
-        transition: .2s ease-in-out;
-    }
-    
-     tr.selected td{
-        background-color: #71afff;
-        color: black;
-      }
-    
-    .spinner{
-        border: 8px solid rgba(0, 0, 0, 0.5);
-        border-left-color: rgb(41, 60, 110);
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-    
-    .column{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .row-back{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .row-icons{
-        display: flex;
-    }
-    
-    .row-icons i{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        margin-left: 10px;
-        border-radius: 10px;
-        width: 5rem;
-    }
-    
-    .row-icons i:hover{
-        cursor: pointer;
-        transition: .3s ease-in-out;
-        transform: scale(1.3)
-    }
-    
-    .fa-print, .fa-edit{
-        color: rgba(0, 0, 0, 0.750);
-    }
-    
-    .fa-file-excel{
-        color: rgb(0, 128, 0);
-    }
-    
-    .back{
-        padding-top: 15px;
-        text-decoration: none;
-        font-size: 1.5rem;
-        color: rgba(0, 0, 0, 0.5)
-    }
-    
-    .back:hover{
-        color: black;
-        transition: .3s ease-in-out;
-        text-decoration: underline;
-        transform: scale(1.1)
-    }
-    
-    @keyframes spin {
-        to {transform: rotate(360deg);}
-    }
+    //------>>>>>> FIM: REGISTRO DE PRODUTOS <<<<<<------
+}
+
+
+//------>>>>>> INICIO: TABELA <<<<<<------
+table{
+    margin: 20px 0;
+    box-shadow: 0 5px 30px darkgrey;
+}
+
+
+table, th, td {
+    font-size: 0.75rem;
+    border-collapse: collapse;
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: normal;
+}
+
+tbody {
+    display: block;
+    height: 390px;
+    overflow: auto;
     
 }
 
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;/* even columns width , fix width of table too*/
+}
+
+tbody::-webkit-scrollbar {
+    width: 5px;           
+}
+
+tbody::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;       
+}
+
+tbody::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;    
+}
+
+tbody::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+th{
+    background-color: rgba(0, 0, 0, 0.750);
+    color: whitesmoke;
+}
+
+tr td{
+    cursor: pointer;
+}
+
+tr:nth-child(odd){
+    background-color: lightgray;
+  }
+
+tr:hover td{
+    background-color: #fac696;
+    color: black;
+    transition: .2s ease-in-out;
+}
+
+ tr.selected td{
+    background-color: #71afff;
+    color: black;
+  }
+
+//------>>>>>> FIM: TABELA <<<<<<------
+
+//------>>>>>> INICIO: SPINNER <<<<<<------
+.spinner{
+    border: 8px solid rgba(0, 0, 0, 0.5);
+    border-left-color: rgb(41, 60, 110);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {transform: rotate(360deg);}
+}
+//------>>>>>> FIM: SPINNER <<<<<<------
+
+//------>>>>>> INICIO: ICONES <<<<<<------
+.fa-print, .fa-edit{
+    color: rgba(0, 0, 0, 0.750);
+}
+
+.fa-file-excel, .fa-check-circle{
+    color: rgb(0, 128, 0);
+}
+
+.fa-times-circle{
+    color: rgba(128, 0, 0);
+}
+
+.fa-chevron-circle-left{
+    color: rgba(0, 0, 128);
+}
+
+//------>>>>>> FIM: ICONES <<<<<<------
+
+//modal
 .modal-container {
     width: 100vw;
     height: 100vh;
@@ -366,7 +442,7 @@ main{
 
     .modal {
         background: whitesmoke;
-        width: 60%;
+        width: 70%;
         min-width: 300px;
         padding: 40px;
         border: 10px solid #293c6e;
@@ -427,15 +503,16 @@ main{
         width: 30%;
     }
     
-    .productID input{
-        color: black;
-        font-weight: bolder;
-        opacity: 0.3;
-    }
     
     .description{
         width: 40%;
         padding-left: 0.625rem;//10px    
+    }
+
+    input:read-only{
+        color: #000000a6;
+        font-weight: bolder;
+        opacity: 0.3;
     }
     
     .quantity{
@@ -449,9 +526,6 @@ main{
             
 
             input{
-                color: black;
-                font-weight: bolder;
-                opacity: 0.3;
                 margin-right: 0.625rem;//10px  
                 
             }
@@ -533,183 +607,96 @@ main{
         transform: scale(1.3)
     }
     
-    .fa-check-circle{
-        color: rgba(0, 128, 0);
-    }
-    
     .row-icons p{
         font-size: 16px;
     }
     
-    .fa-times-circle{
-        color: rgba(128, 0, 0);
-    }
+
 }
 
 .modal-container.show {
     display: flex;
 }
 
-//cadastro de mercadoria
-.register{
+//gerar de código de barras
+.barcode{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 80%;
-    background-color: whitesmoke;
-    padding: 20px;
-    color: rgba(0, 0, 0, 0.5);
+    background-color: #7487B8;
+    width: 1800px;
+    height: 800px;
     border-radius: 2rem;
-    height: 90%;
-    font-size: 2rem;
+    margin-top: 60px;
+    box-shadow: 0 0 1rem black;
 
+    .barcode-main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 80%;
+        height: 90%;
+        font-size: 2rem;
+        background-color: whitesmoke;
+        padding: 30px;
+        color: rgba(0, 0, 0, 0.5);
+        border-radius: 2rem;
+    }
+    
     .header-banner{
         display: flex;
-        padding: 20px;
+        padding: 30px;
         font-size: 1.5rem;
         text-align: center;
     }
     
     .central-column{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .row{
-        display: flex;
-        width: 100%;
-        padding: 15px 0;
-        text-align: left;
-    }
-
-    .invalid-input{
-        border: thin solid #c20202;
-        color: #c20202;
-        
-    }
-
-    .invalid-label{
-        color: #c20202;
-        
-    }
-    
-    .productID{
-        width: 20%;
-    }
-    
-    .inputID{
-        color: #000000a6;
-        font-weight: bolder;
-        opacity: 0.3;
-    }
-    
-    .description{
-        width: 100%;
-        padding-left: 10px;
-    }
-    
-    .quantity{
-        width: 20%;
-        padding-left: 10px;
-    }
-    
-    .category{
-        width: 25%;
-    }
-    
-    .price{
-        width: 25%;
-        padding-left: 10px;
-    }
-    
-    .size{
-        width: 25%;
-        padding-left: 10px;
-    }
-    
-    .size select{
-        padding: 0;
-    }
-    
-    .color{
-        width: 25%;
-        padding-left: 10px;
+        display: block;
     }
     
     .central-column  label,
     .central-column  select,
-    .central-column  input,
-    .central-column i{
+    .central-column  input{
+        display: block;
         width: 100%;
+        padding-bottom: 10px;
+        text-align: left;
     }
     
     .central-column select,
     .central-column input{
-        font-size: 1rem;
+        margin-bottom: 5px;
+        font-size: 16px;
+        padding: 2px;
         font-family: 'Montserrat', sans-serif;
     }
     
-    .central-column input{
-        padding: 5px;
-    }
-    
-    .central-column select{
-        padding: 5px 0;
-    }
-    
-    .column{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .row-icons{
-        display: flex;
-    }
-    
-    .row-item{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    
-    .row-icons i{
-        padding: 10px;
-        width: 5rem;
-    }
-
-    .row-icons i:hover{
+    .btn{
+        padding: 15px 30px;
+        margin: 20px;
+        border-radius: 30px;
+        background-color: #B8A474;
+        color: white;
+        font-size: 16px;
         cursor: pointer;
-        transition: .3s ease-in-out;
-        transform: scale(1.3)
+        border: 0;
+        font-weight: bold;
     }
-
-    .fa-check-circle{
-        color: rgba(0, 128, 0);
+    
+    .btn:hover{
+        background-color: #6B592E;
+        transition: .3s ease-in;
+        transform: scale(1.1)
     }
-
-    .fa-times-circle{
-        color: rgba(128, 0, 0);
-    }
-
-    .row-icons p{
-        font-size: 1.2rem;
-    }
- 
-    .row-back{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    
+    .barcode-area{
+        border: 1px solid rgba(0, 0, 0, 0.5);   
     }
     
     .back{
-        padding-top: 35px;
+        padding-top: 15px;
         text-decoration: none;
         font-size: 1.5rem;
         color: rgba(0, 0, 0, 0.5)
@@ -719,7 +706,7 @@ main{
         color: black;
         transition: .3s ease-in-out;
         text-decoration: underline;
-        transform: scale(1.3)
+        transform: scale(1.1)
     }
 }
 

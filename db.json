@@ -255,12 +255,38 @@
   ],
   "vendedores": [
     {
-      "name": "Renan Gibeli",
-      "cpf": "406.456.678-54"
+      "nome": "renan oliveira gibeli",
+      "cpf": "406.456.678-54",
+      "rg": "50.309.384-1",
+      "dtNasc": "1996-05-08",
+      "genero": "Masculino",
+      "cep": "06404-326",
+      "endereco": "Avenida Trindade",
+      "numero": "374",
+      "complemento": "apto 31",
+      "bairro": "Bethaville I",
+      "cidade": "Barueri",
+      "uf": "SP",
+      "telefone": "",
+      "celular": "(11) 9 7496-9944",
+      "id": 1
     },
     {
-      "name": "Sara Simões",
-      "cpf": "448.661.488-70"
+      "nome": "sara simões gibeli",
+      "cpf": "448.661.488-70",
+      "rg": "",
+      "dtNasc": "1997-06-02",
+      "genero": "Masculino",
+      "cep": "06404-326",
+      "endereco": "Avenida Trindade",
+      "numero": "374",
+      "complemento": "apto 31",
+      "bairro": "Bethaville I",
+      "cidade": "Barueri",
+      "uf": "SP",
+      "telefone": "",
+      "celular": "(11) 9 8262-4411",
+      "id": 2
     }
   ]
 }

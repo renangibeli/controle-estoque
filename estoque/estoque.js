@@ -6,118 +6,123 @@ axios.get(`${server}/estoque`)
 
         const mainTable = document.querySelector('#mainTable')
         const spinner = document.querySelector('#displayNone')
+        const headerFields = ['ID', 'Descrição', 'Entrada', 'Saída', 'Quantidade', 'Categoria', 'Custo', 'Venda', 'Tamanho', 'Cor']
+        const rowIcons = document.querySelector('#rowIcons')
 
-        if (result.length === 0) {
-            const p = document.createElement('p')
-            p.innerHTML = 'Não existem produtos cadastrados'
-            p.setAttribute('style', 'padding: 20px')
+        createTable(headerFields, result, mainTable, spinner, rowIcons)
 
-            const rowIcons = document.querySelector('#rowIcons')
-            rowIcons.setAttribute('style', 'display: none')
-
-            spinner.setAttribute('style', 'display: none')
-            mainTable.appendChild(p)
-        } else {
-
-            //criar cabeçalho da tabela
-            const table = document.createElement('table')
-            table.setAttribute('data-cols-width', '40')
-            table.setAttribute('id', 'table')
-
-            const thead = document.createElement('thead')
-            table.appendChild(thead)
-
-            const trHead = document.createElement('tr')
-            thead.appendChild(trHead)
-
-            const tableFields = ['ID', 'Descrição', 'Entrada', 'Saída', 'Quantidade', 'Categoria', 'Custo', 'Venda', 'Tamanho', 'Cor']
-
-            for (let i in tableFields) {
-                let thHead = document.createElement('th')
-                thHead.innerHTML = tableFields[i]
-                thHead.setAttribute('data-fill-color', '808080')
-                thHead.setAttribute('data-f-color', 'f5f5f5')
-                thHead.setAttribute('data-f-bold', true)
-                thHead.setAttribute('data-b-a-s', 'thin')
-                trHead.appendChild(thHead)
-            }
-
-            const tbody = document.createElement('tbody')
-
-
-            //criar linhas da tabela com dados do banco
-            result.map(product => {
-                const tr = document.createElement('tr')
-
-                //id
-                const tdId = document.createElement('td')
-                tdId.innerHTML = product.id
-                tdId.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdId)
-
-                //descrição
-                const tdDescription = document.createElement('td')
-                tdDescription.innerHTML = product.description
-                tdDescription.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdDescription)
-
-                //Entrada
-                const tdEntry = document.createElement('td')
-                tdEntry.innerHTML = product.stock.entry
-                tdEntry.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdEntry)
-
-                //Saida
-                const tdOut = document.createElement('td')
-                tdOut.innerHTML = product.stock.out
-                tdOut.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdOut)
-
-                //quantidade
-                const tdQuantity = document.createElement('td')
-                tdQuantity.innerHTML = product.stock.quantity
-                tdQuantity.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdQuantity)
-
-                //genero
-                const tdGender = document.createElement('td')
-                tdGender.innerHTML = product.gender
-                tdGender.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdGender)
-
-                //Preço de compra
-                const tdBuyPrice = document.createElement('td')
-                const formatedBuyPrice = clientService.formatCurrency(product.buyPrice)
-                tdBuyPrice.innerHTML = formatedBuyPrice
-                tdBuyPrice.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdBuyPrice)
-
-                //preço de venda
-                const tdSellPrice = document.createElement('td')
-                const formatedSellPrice = clientService.formatCurrency(product.sellPrice)
-                tdSellPrice.innerHTML = formatedSellPrice
-                tdSellPrice.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdSellPrice)
-
-                //tamanho
-                const tdSize = document.createElement('td')
-                tdSize.innerHTML = product.size
-                tdSize.setAttribute('data-b-a-s', 'thin')
-                tr.appendChild(tdSize)
-
-                //cor
-                const tdColor = document.createElement('td')
-                tdColor.innerHTML = product.color
-                tdColor.setAttribute('data-b-a-s', 'thin')
-                /* tdColor.setAttribute('style', 'text-align: left') */
-                tr.appendChild(tdColor)
-
-                tbody.appendChild(tr)
-            })
+        function createTable(headerFields, result, divTable, divSpinner, divIcons){
+            if (result.length === 0) {
+                const p = document.createElement('p')
+                p.innerHTML = 'Não existem produtos cadastrados'
+                p.setAttribute('style', 'padding: 20px')
+    
+                divIcons.setAttribute('style', 'display: none')
+    
+                divSpinner.setAttribute('style', 'display: none')
+                divTable.appendChild(p)
+            } else {
+    
+                //criar cabeçalho da tabela
+                const table = document.createElement('table')
+                table.setAttribute('data-cols-width', '40')
+                table.setAttribute('id', 'table')
+    
+                const thead = document.createElement('thead')
+                table.appendChild(thead)
+    
+                const trHead = document.createElement('tr')
+                thead.appendChild(trHead)
+    
+                for (let i in headerFields) {
+                    let thHead = document.createElement('th')
+                    thHead.innerHTML = headerFields[i]
+                    thHead.setAttribute('data-fill-color', '808080')
+                    thHead.setAttribute('data-f-color', 'f5f5f5')
+                    thHead.setAttribute('data-f-bold', true)
+                    thHead.setAttribute('data-b-a-s', 'thin')
+                    trHead.appendChild(thHead)
+                }
+    
+                const tbody = document.createElement('tbody')
+    
+                //criar linhas da tabela com dados do banco
+                result.map(product => {
+                    const tr = document.createElement('tr')
+    
+                    //id
+                    const tdId = document.createElement('td')
+                    tdId.innerHTML = product.id
+                    tdId.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdId)
+    
+                    //descrição
+                    const tdDescription = document.createElement('td')
+                    tdDescription.innerHTML = product.description
+                    tdDescription.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdDescription)
+    
+                    //Entrada
+                    const tdEntry = document.createElement('td')
+                    tdEntry.innerHTML = product.stock.entry
+                    tdEntry.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdEntry)
+    
+                    //Saida
+                    const tdOut = document.createElement('td')
+                    tdOut.innerHTML = product.stock.out
+                    tdOut.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdOut)
+    
+                    //quantidade
+                    const tdQuantity = document.createElement('td')
+                    tdQuantity.innerHTML = product.stock.quantity
+                    tdQuantity.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdQuantity)
+    
+                    //genero
+                    const tdGender = document.createElement('td')
+                    tdGender.innerHTML = product.gender
+                    tdGender.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdGender)
+    
+                    //Preço de compra
+                    const tdBuyPrice = document.createElement('td')
+                    const formatedBuyPrice = clientService.formatCurrency(product.buyPrice)
+                    tdBuyPrice.innerHTML = formatedBuyPrice
+                    tdBuyPrice.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdBuyPrice)
+    
+                    //preço de venda
+                    const tdSellPrice = document.createElement('td')
+                    const formatedSellPrice = clientService.formatCurrency(product.sellPrice)
+                    tdSellPrice.innerHTML = formatedSellPrice
+                    tdSellPrice.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdSellPrice)
+    
+                    //tamanho
+                    const tdSize = document.createElement('td')
+                    tdSize.innerHTML = product.size
+                    tdSize.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdSize)
+    
+                    //cor
+                    const tdColor = document.createElement('td')
+                    tdColor.innerHTML = product.color
+                    tdColor.setAttribute('data-b-a-s', 'thin')
+                    tr.appendChild(tdColor)
+    
+                    tbody.appendChild(tr)
+                })
 
             table.appendChild(tbody)
-            spinner.setAttribute('style', 'display: none')
-            mainTable.appendChild(table)
+            divSpinner.setAttribute('style', 'display: none')
+            divTable.appendChild(table)
+        }
+
+        
+
+            
 
             // -->> SELEÇÃO DE LINHAS DENTRO DA TABELA HTML <<--
             let lines = table.getElementsByTagName("tr")

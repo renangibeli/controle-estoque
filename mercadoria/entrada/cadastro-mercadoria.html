@@ -14,13 +14,14 @@
 <body>
 
     <main>
-        <div class="register">
+        <div class="global-container-options">
+
             <div class="header-banner">
                 <h1>Cadastro de Produtos</h1>
             </div>
 
             <div class="central-column">
-                <form action="">
+                <form>
                     <div class="row">
                         <div class="productID">
                             <label for="productID" id="labelID">ID</label>
@@ -41,23 +42,21 @@
                     <div class="row">
                         <div class="gender">
                             <label for="gender" id="labelGender">Gênero</label>
-                            <select name="category" id="inputGender" class="gender"  required>
+                            <select name="gender" id="inputGender" class="gender"  required>
                                 <option value="" selected></option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Feminino">Feminino</option>
                                 <option value="Unissex">Unissex</option>
                             </select>
-                            <span class="error"></span>
                         </div>
                         <div class="price">
-                            <label for="buyPrice" id="labelBuyPrice">Custo</label>
+                            <label for="buyPrice" id="labelBuyPrice">Custo</label>x1
                             <input type="text" id="inputBuyPrice" name="buyPrice" placeholder="R$ 00,00" required>
                             <span class="error"></span>
                         </div>
                         <div class="price">
                             <label for="sellPrice" id="labelSellPrice">Venda</label>
                             <input type="text" id="inputSellPrice" name="sellPrice" placeholder="R$ 00,00" required>
-                            <span class="error"></span>
                         </div>
                         <div class="size">
                             <label for="size" id="labelSize">Tamanho</label>
@@ -69,12 +68,10 @@
                                 <option value="G">G</option>
                                 <option value="GG">GG</option>
                             </select>
-                            <span class="error"></span>
                         </div>
                         <div class="color">
                             <label for="color" id="labelColor">Cor</label>
                             <input type="text" id="inputColor" class="color" name="color" maxlength="10" required style="text-transform: uppercase;">
-                            <span class="error"></span>
                         </div>
                     </div>
                     <div class="column">
