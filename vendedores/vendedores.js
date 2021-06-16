@@ -1,4 +1,11 @@
+import {
+    clientService
+} from '../services/client-service.js'
+
+const title = document.querySelector('#title')
+
 const inputName = document.querySelector('#inputName')
+const inputId = document.querySelector('#inputId')
 const inputCpf = document.querySelector('#inputCpf')
 const inputRg = document.querySelector('#inputRg')
 const inputBirthday = document.querySelector('#inputBirthday')
@@ -15,69 +22,101 @@ const inputUf = document.querySelector('#inputUf')
 const inputTelephone = document.querySelector('#inputTelephone')
 const inputCellphone = document.querySelector('#inputCellphone')
 
+axios.get(`${server}/vendedores`)
+.then(response => {
+    const result = response.data
 
-Inputmask("999.999.999-99").mask(inputCpf)
-Inputmask("99.999.999-9").mask(inputRg)
-Inputmask("99999-999").mask(inputCep)
-Inputmask("(99) 9999-9999").mask(inputTelephone)
-Inputmask("(99) 9 9999-9999").mask(inputCellphone)
+    const mainTable = document.querySelector('#mainTable')
+    const spinner = document.querySelector('#displayNone')
+    const headerFields = ['ID', 'Nome', 'CPF', 'RG', 'Dt. Nasc.', 'Gênero', 'CEP', 'Endereço', 'Número', 'Complemento', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular']
+    const rowIcons = document.querySelector('#rowIcons')
 
+    clientService.createTable(headerFields, result, mainTable, spinner, rowIcons, "vendedor")
 
+    // -->> SELEÇÃO DE LINHAS DENTRO DA TABELA HTML <<--
+    let lines = table.getElementsByTagName("tr")
 
-inputCep.addEventListener('blur', () => {
-    let unmaskCep = inputCep.inputmask.unmaskedvalue()
-    
-    if (unmaskCep.length == 8) {
-        axios.get(`https://viacep.com.br/ws/${inputCep.value}/json/`)
-            .then(response => {
-                const result = response.data
-                inputAdress.value = result.logradouro
-                inputDistrict.value = result.bairro
-                inputCity.value = result.localidade
-                inputUf.value = result.uf
-            })
-            .catch()    
-    } else {
-        inputAdress.value = ''
-        inputDistrict.value = ''
-        inputCity.value = ''
-        inputUf.value = ''
+    for (let i = 0; i < lines.length; i++) {
+        let line = lines[i];
+
+        line.addEventListener("click", function () {
+            clientService.selLines(this, false)
+        })
     }
 })
+.catch()
 
-const addBtn = document.querySelector('#addBtn')
-addBtn.addEventListener('click', () => {
-    axios.post(`${server}/vendedores`,{
-        "nome": inputName.value,
-        "cpf": inputCpf.value,
-        "rg": inputRg.value,
-        "dtNasc": inputBirthday.value,
-        "genero": inputGender.value,
-        "cep": inputCep.value,
-        "endereco": inputAdress.value,
-        "numero": inputNumber.value,
-        "complemento": inputComp.value,
-        "bairro": inputDistrict.value,
-        "cidade": inputCity.value,
-        "uf": inputUf.value,
-        "telefone": inputTelephone.value,
-        "celular": inputCellphone.value
-    })
-    .then((response) => {
-        window.alert(`Cadastro do vendedor ${inputName.value} realizado com sucesso!`)
-    })
-    .catch(error => console.log(error)) 
+//------>>>>>> INICIO - BOTÃO DE CADASTRAR <<<<<<------
+const createBtn = document.querySelector('#createBtn')
+createBtn.addEventListener('click', () => {
+
+    title.innerHTML = 'Cadastrar vendedores'
+    
+    const modal = document.querySelector('#modal-container')
+    modal.classList.add('show')
 })
+//------>>>>>> FINAL - BOTÃO DE CADASTRAR <<<<<<------
 
 
-const backBtn = document.querySelector("#backBtn")
-                    clearBtn.addEventListener('click', () => {
-                        modal.classList.remove('show')
-                        /* clientService.removeInvalidClass(inputDescription, labelDescripition)
-                        clientService.removeInvalidClass(inputQuantity, labelQuantity)
-                        clientService.removeInvalidClass(inputGender, labelGender)
-                        clientService.removeInvalidClass(inputBuyPrice, labelBuyPrice)
-                        clientService.removeInvalidClass(inputSellPrice, labelSellPrice)
-                        clientService.removeInvalidClass(inputSize, labelSize)
-                        clientService.removeInvalidClass(inputColor, labelColor) */
-                    })
+//------>>>>>> INICIO - BOTÃO DE EDITAR <<<<<<------
+const editBtn = document.querySelector("#editBtn")
+
+editBtn.addEventListener("click", () => {
+    const selecteds = table.querySelectorAll(".selected")
+
+    //Verificar se está selecionado
+    if (selecteds.length < 1) {
+        alert("Selecione pelo menos uma linha")
+    } else {
+        let selected = selecteds[0]
+        selected = selected.querySelectorAll("td")
+
+        inputId.value = selected[0].innerHTML
+        inputName.value = selected[1].innerHTML
+        inputCpf.value = selected[2].innerHTML
+        inputRg.value = selected[3].innerHTML
+        inputBirthday.value = selected[4].innerHTML.split('/').reverse().join('-')
+        inputGender.value = selected[5].innerHTML
+        inputCep.value = selected[6].innerHTML
+        inputAdress.value = selected[7].innerHTML
+        inputNumber.value = selected[8].innerHTML
+        inputComp.value = selected[9].innerHTML
+        inputDistrict.value = selected[10].innerHTML
+        inputCity.value = selected[11].innerHTML
+        inputUf.value = selected[12].innerHTML
+        inputTelephone.value = selected[13].innerHTML
+        inputCellphone.value = selected[14].innerHTML
+
+        title.innerHTML = 'Editar vendedores'
+
+        const modal = document.querySelector('#modal-container')
+        modal.classList.add('show')
+    }
+})
+//------>>>>>> FIM - BOTÃO DE EDITAR <<<<<<------
+
+//------>>>>>> INICIO - BOTÃO DE EXCLUIR <<<<<<------
+const excludeBtn = document.querySelector('#excludeBtn')
+excludeBtn.addEventListener('click', () => {
+    const selecteds = table.querySelectorAll(".selected")
+
+    if (selecteds.length < 1) {
+        alert("Selecione pelo menos uma linha")
+    } else {
+        if(window.confirm('Tem certeza que deseja excluir a linha selecionada?')){
+            let selected = selecteds[0]
+            selected = selected.querySelectorAll("td")
+        
+            axios.delete(`${server}/vendedores/${selected[0].innerHTML}`)
+            .then(window.alert(`Vendedor: ${selected[0].innerHTML} - ${selected[1].innerHTML} excluído com sucesso`))
+            .catch(error => {
+                console.log(error)
+            })
+        } else {
+            console.log('else')
+        }
+        
+
+    }
+})
+//------>>>>>> FIM - BOTÃO DE EXCLUIR <<<<<<------

@@ -1,24 +1,24 @@
 @use 'variables';
 
-@media (max-width: 1080px){
-    html{
+@media (max-width: 1080px) {
+    html {
         font-size: 93.75%; //15 px
     }
 }
 
-@media (max-width: 720px){
-    html{
+@media (max-width: 720px) {
+    html {
         font-size: 87.5%; //14px
     }
 }
 
-*{
-    margin: 0; 
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: whitesmoke;
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -27,7 +27,7 @@ body{
 }
 
 //tela inicial
-main{
+main {
     display: flex;
     margin-top: 60px;
     width: 1800px;
@@ -40,7 +40,7 @@ main{
     text-align: center;
     box-shadow: 0 0 1em black;
 
-    .row-1{
+    .row-1 {
         width: 90%;
         height: 40%;
         margin: 0;
@@ -48,8 +48,8 @@ main{
         justify-content: center;
         transform: translate(0%, -5%);
     }
-    
-    .row-2{
+
+    .row-2 {
         width: 90%;
         height: 40%;
         margin: 0;
@@ -57,14 +57,14 @@ main{
         justify-content: center;
         transform: translate(0%, 5%);
     }
-    
-    .row-items{
+
+    .row-items {
         display: flex;
         width: 100%;
         height: 100%;
     }
-    
-    .row-items-details{
+
+    .row-items-details {
         display: flex;
         flex-direction: column;
         width: calc(100%/6);
@@ -76,34 +76,34 @@ main{
         border-radius: 1rem;
         text-decoration: none;
     }
-    
-    .row-items-details:hover{
+
+    .row-items-details:hover {
         color: whitesmoke;
         opacity: 0.9;
         background-color: rgba(0, 0, 0, 0.5);
-        transition: .3s  ease-in;
+        transition: .3s ease-in;
         transform: scale(1.1)
     }
-    
-    .row-items-details p{
+
+    .row-items-details p {
         height: 30%;
         font-size: 1.5rem;
         padding: 25px;
         font-weight: bold;
     }
-    
-    .row-items-details i{
+
+    .row-items-details i {
         height: 70%;
         font-size: 8rem;
     }
 
-    .global-container-options{
+    .global-container-options {
         display: flex;
         align-items: center;
-        justify-content: center;
+
         flex-direction: column;
-        width: 80%;
-        height: 90%;
+        width: 98%;
+        height: 98%;
         background-color: whitesmoke;
         padding: 20px;
         color: rgba(0, 0, 0, 0.5);
@@ -112,288 +112,227 @@ main{
         max-height: 90%;
 
         //------>>>>>> INICIO: REGISTRO DE PRODUTOS <<<<<<------
-        .header-banner{
+        .header-banner {
             display: flex;
             padding: 20px;
             font-size: 1.5rem;
             text-align: center;
         }
-        
-        .central-column{
+
+        .central-column {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
         }
-        
-        .row{
+
+        .row {
             display: flex;
             width: 100%;
-            padding: 15px 0;
+            padding: 0.9375rem 0;
             text-align: left;
 
-            .input{
+            .input {
                 margin: 10px;
             }
-    
-            input, select, label{
+
+            input,
+            select,
+            label {
                 font-size: 1rem;
                 font-family: 'Montserrat', sans-serif;
                 padding: 5px;
                 width: 100%;
             }
-    
-            label{
+
+            label {
                 font-size: 1.5rem;
             }
-    
-            input:read-only{
+
+            input:read-only {
                 color: #000000a6;
                 font-weight: bolder;
                 opacity: 0.3;
             }
 
             //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO <<<<<<------
-            .productID{
+            .productID {
                 width: 20%;
             }
-            
-            
-            .description{
+
+
+            .description {
                 width: 100%;
-                padding-left: 10px;
             }
-            
-            .quantity{
+
+            .quantity {
                 width: 20%;
-                padding-left: 10px;
             }
-            
-            .category{
+
+            .category {
                 width: 25%;
             }
-            
-            .price{
+
+            .price {
                 width: 25%;
-                padding-left: 10px;
             }
-            
-            .size{
-                width: 25%;
-                padding-left: 10px;
-            }
-            
-            .size select{
-                padding: 0;
-            }
-            
-            .color{
-                width: 25%;
-                padding-left: 10px;
+
+            .color {
+                
             }
 
             //------>>>>> FIM: ESPAÇAMENTO DE REGISTRO DE PRODUTOS <<<<<<------
-            
-            //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO VENDEDORES <<<<<<------
-            .name{
-                width: 40%;
-            }
-    
-            .cpf, .rg{
-                width: 10%;
-            }
-    
-            .birthday{
-                width: 15%;
-            }
-    
-            .cep{
-                width: 15%;
-            }
-    
-            .adress{
-                width: 50%;
-            }
-    
-            .number{
-                width: 10%;
-            }
-    
-            .comp{
-                width: 15%;
-            }
-    
-            .district{
-                width: 40%;
-            }
-    
-            .city{
-                width: 15%;
-            }
-    
-            .uf{
-                width: 5%;
-            }
-            //------>>>>> FIM: ESPAÇAMENTO DE REGISTRO VENDEDORES <<<<<<------
         }
 
-        .contact{
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-    
-            .telephone{
-                width: 10%;
-            }
-    
-            .cellphone{
-                width: 10%;
-            }
-        }
-    
-        .invalid-input{
+        .invalid-input {
             border: thin solid #c20202;
             color: #c20202;
-            
+
         }
-    
-        .invalid-label{
+
+        .invalid-label {
             color: #c20202;
-            
+
         }
-        
-        .column{
+
+        .column {
             display: flex;
             flex-direction: column;
             width: 100%;
             align-items: center;
             justify-content: center;
+            padding: 10px 0;
         }
-        
-        .row-icons{
+
+        .row-icons {
             display: flex;
         }
-        
-        .row-item{
+
+        .row-item {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
         }
-        
-        .row-icons i{
+
+        .row-icons i {
             padding: 10px;
             width: 5rem;
         }
-    
-        .row-icons i:hover{
+
+        .row-icons i:hover {
             cursor: pointer;
             transition: .3s ease-in-out;
             transform: scale(1.3)
         }
-    
-        .row-icons p{
+
+        .row-icons p {
             font-size: 16px;
         }
-     
-        .row-back{
+
+        .row-back {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
-        .back{
-            padding-top: 35px;
+
+        .back {
+            padding-top: 20px;
             text-decoration: none;
             font-size: 1.5rem;
             color: rgba(0, 0, 0, 0.5)
         }
-        
-        .back:hover{
+
+        .back:hover {
             color: black;
             transition: .3s ease-in-out;
             text-decoration: underline;
             transform: scale(1.1)
         }
     }
+
     //------>>>>>> FIM: REGISTRO DE PRODUTOS <<<<<<------
 }
 
 
 //------>>>>>> INICIO: TABELA <<<<<<------
-table{
-    margin: 20px 0;
+table {
+    margin: 10px 0;
     box-shadow: 0 5px 30px darkgrey;
+    min-width: 1280px;
+
 }
 
 
-table, th, td {
-    font-size: 0.75rem;
+table,
+th,
+td {
+    font-size: 1rem;
     border-collapse: collapse;
-    padding: 5px 10px;
+    padding: 5px;
     text-align: center;
     font-weight: normal;
 }
 
 tbody {
     display: block;
-    height: 390px;
+    max-height: 390px;
     overflow: auto;
-    
 }
 
-thead, tbody tr {
+thead,
+tbody tr {
     display: table;
     width: 100%;
-    table-layout: fixed;/* even columns width , fix width of table too*/
+    table-layout: fixed;
 }
 
 tbody::-webkit-scrollbar {
-    width: 5px;           
+    width: 5px;
 }
 
 tbody::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.1);
-    border-radius: 20px;       
+    border-radius: 20px;
 }
 
 tbody::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 20px;    
+    border-radius: 20px;
 }
 
-tbody::-webkit-scrollbar-thumb:hover{
+tbody::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-th{
+th {
     background-color: rgba(0, 0, 0, 0.750);
     color: whitesmoke;
 }
 
-tr td{
+tr td {
     cursor: pointer;
 }
 
-tr:nth-child(odd){
+tr:nth-child(odd) {
     background-color: lightgray;
-  }
+}
 
-tr:hover td{
+tr:hover td {
     background-color: #fac696;
     color: black;
     transition: .2s ease-in-out;
 }
 
- tr.selected td{
+tr.selected td {
     background-color: #71afff;
     color: black;
-  }
+}
 
 //------>>>>>> FIM: TABELA <<<<<<------
 
 //------>>>>>> INICIO: SPINNER <<<<<<------
-.spinner{
+.spinner {
     border: 8px solid rgba(0, 0, 0, 0.5);
     border-left-color: rgb(41, 60, 110);
     height: 60px;
@@ -403,24 +342,29 @@ tr:hover td{
 }
 
 @keyframes spin {
-    to {transform: rotate(360deg);}
+    to {
+        transform: rotate(360deg);
+    }
 }
+
 //------>>>>>> FIM: SPINNER <<<<<<------
 
 //------>>>>>> INICIO: ICONES <<<<<<------
-.fa-print, .fa-edit{
+.fa-print,
+.fa-edit {
     color: rgba(0, 0, 0, 0.750);
 }
 
-.fa-file-excel, .fa-check-circle{
+.fa-file-excel,
+.fa-check-circle {
     color: rgb(0, 128, 0);
 }
 
-.fa-times-circle{
+.fa-times-circle {
     color: rgba(128, 0, 0);
 }
 
-.fa-chevron-circle-left{
+.fa-chevron-circle-left {
     color: rgba(0, 0, 128);
 }
 
@@ -450,167 +394,254 @@ tr:hover td{
         position: relative;
         color: rgba(0, 0, 0, 0.5);
     }
-    
+
     @keyframes modal {
         from {
             opacity: 0;
             transform: translate3d(0, -60px, 0);
         }
+
         to {
             opacity: 1;
             transform: translate3d(0, 0, 0);
         }
     }
-    
+
     .show .modal {
         animation: modal .3s;
     }
-    
-    .header-banner{
+
+    .header-banner {
         display: flex;
         padding: 20px;
         font-size: 1.5rem;
         text-align: center;
         justify-content: center;
     }
-    
-    .central-column{
+
+    .central-column {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
     }
-    
-    .row{
+
+    .row {
         display: flex;
         width: 100%;
         padding: 0.9375rem 0;
         text-align: left;
+
+        .input {
+            margin: 10px;
+        }
+
+        input,
+        select,
+        label {
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            padding: 5px;
+            width: 100%;
+        }
+
+        label {
+            font-size: 1.5rem;
+        }
+
+        input:read-only {
+            color: #000000a6;
+            font-weight: bolder;
+            opacity: 0.3;
+        }
+
+
+        //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO VENDEDORES <<<<<<------
+        .id{
+            width: 10%;
+        }
+
+        .name {
+            width: 40%;
+        }
+
+        .cpf,
+        .rg {
+            width: 15%;
+        }
+
+        .birthday {
+            width: 15%;
+        }
+
+        .cep {
+            width: 15%;
+        }
+
+        .adress {
+            width: 50%;
+        }
+
+        .number {
+            width: 10%;
+        }
+
+        .comp {
+            width: 15%;
+        }
+
+        .district {
+            width: 40%;
+        }
+
+        .city {
+            width: 15%;
+        }
+
+        .uf {
+            width: 5%;
+        }
+
+        //------>>>>> FIM: ESPAÇAMENTO DE REGISTRO VENDEDORES <<<<<<------
     }
 
-    .invalid-input{
+    .contact {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .telephone {
+            width: 10%;
+        }
+
+        .cellphone {
+            width: 10%;
+        }
+    }
+
+    .invalid-input {
         border: thin solid #c20202;
         color: #c20202;
-        
+
     }
 
-    .invalid-label{
+    .invalid-label {
         color: #c20202;
-        
+
     }
-    
-    .productID{
+
+    .productID {
         width: 30%;
     }
-    
-    
-    .description{
+
+
+    .description {
         width: 40%;
-        padding-left: 0.625rem;//10px    
+        padding-left: 0.625rem; //10px    
     }
 
-    input:read-only{
+    input:read-only {
         color: #000000a6;
         font-weight: bolder;
         opacity: 0.3;
     }
-    
-    .quantity{
-        width: 30%;
-        padding-left: 0.625rem;//10px  
 
-        .input-quantity{
+    .quantity {
+        width: 30%;
+        padding-left: 0.625rem; //10px  
+
+        .input-quantity {
             display: flex;
             width: 100%;
-            padding-top: 0.5625rem;//9px
-            
+            padding-top: 0.5625rem; //9px
 
-            input{
-                margin-right: 0.625rem;//10px  
-                
+
+            input {
+                margin-right: 0.625rem; //10px  
+
             }
         }
     }
 
-    .category{
+    .category {
         width: 25%;
     }
-    
-    .price{
-        width: 25%;
-        padding-left: 10px;
-    }
-    
-    .size{
+
+    .price {
         width: 25%;
         padding-left: 10px;
     }
-    
-    .size select{
+
+    .size {
+        width: 25%;
+        padding-left: 10px;
+    }
+
+    .size select {
         padding: 0;
     }
-    
-    .color{
+
+    .color {
         width: 25%;
         padding-left: 10px;
     }
-    
-    .central-column  label,
-    .central-column  select,
-    .central-column  input,
-    .central-column i{
+
+    .central-column label,
+    .central-column select,
+    .central-column input,
+    .central-column i {
         width: 100%;
     }
-    
+
     .central-column select,
-    .central-column input{
+    .central-column input {
         font-size: 16px;
         font-family: 'Montserrat', sans-serif;
     }
-    
-    .central-column input{
+
+    .central-column input {
         padding: 5px;
     }
-    
-    .central-column select{
+
+    .central-column select {
         padding: 5px 0;
     }
-    
-    .column{
+
+    .column {
         display: flex;
         flex-direction: column;
         width: 100%;
         align-items: center;
         justify-content: center;
     }
-    
-    .row-icons{
+
+    .row-icons {
         display: flex;
     }
-    
-    .row-item{
+
+    .row-item {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
-    
-    .row-icons i{
+
+    .row-icons i {
         padding: 20px;
         margin-left: 10px;
         width: 5rem;
     }
-    
-    .row-icons i:hover{
+
+    .row-icons i:hover {
         cursor: pointer;
         transition: .3s ease-in-out;
         transform: scale(1.3)
     }
-    
-    .row-icons p{
+
+    .row-icons p {
         font-size: 16px;
     }
-    
+
 
 }
 
@@ -619,7 +650,7 @@ tr:hover td{
 }
 
 //gerar de código de barras
-.barcode{
+.barcode {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -631,7 +662,7 @@ tr:hover td{
     margin-top: 60px;
     box-shadow: 0 0 1rem black;
 
-    .barcode-main{
+    .barcode-main {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -644,36 +675,36 @@ tr:hover td{
         color: rgba(0, 0, 0, 0.5);
         border-radius: 2rem;
     }
-    
-    .header-banner{
+
+    .header-banner {
         display: flex;
         padding: 30px;
         font-size: 1.5rem;
         text-align: center;
     }
-    
-    .central-column{
+
+    .central-column {
         display: block;
     }
-    
-    .central-column  label,
-    .central-column  select,
-    .central-column  input{
+
+    .central-column label,
+    .central-column select,
+    .central-column input {
         display: block;
         width: 100%;
         padding-bottom: 10px;
         text-align: left;
     }
-    
+
     .central-column select,
-    .central-column input{
+    .central-column input {
         margin-bottom: 5px;
         font-size: 16px;
         padding: 2px;
         font-family: 'Montserrat', sans-serif;
     }
-    
-    .btn{
+
+    .btn {
         padding: 15px 30px;
         margin: 20px;
         border-radius: 30px;
@@ -684,37 +715,28 @@ tr:hover td{
         border: 0;
         font-weight: bold;
     }
-    
-    .btn:hover{
+
+    .btn:hover {
         background-color: #6B592E;
         transition: .3s ease-in;
         transform: scale(1.1)
     }
-    
-    .barcode-area{
-        border: 1px solid rgba(0, 0, 0, 0.5);   
+
+    .barcode-area {
+        border: 1px solid rgba(0, 0, 0, 0.5);
     }
-    
-    .back{
+
+    .back {
         padding-top: 15px;
         text-decoration: none;
         font-size: 1.5rem;
         color: rgba(0, 0, 0, 0.5)
     }
-    
-    .back:hover{
+
+    .back:hover {
         color: black;
         transition: .3s ease-in-out;
         text-decoration: underline;
         transform: scale(1.1)
     }
 }
-
-
-
-
-
-
-
-
-

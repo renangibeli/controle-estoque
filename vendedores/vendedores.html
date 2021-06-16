@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,27 +12,28 @@
     <link rel="stylesheet" href="../CSS/styles.css">
     <title>Document</title>
 </head>
+
 <body>
     <main>
         <div class="global-container-options">
-<!--        <div class="header-banner">
+            <div class="header-banner">
                 <h1>Vendedores</h1>
             </div>
 
-            <div class="stock-table" id="mainTable">
+            <div id="mainTable">
 
             </div>
 
             <div class='column' id="displayNone" style="margin: 15px 0;">
                 <div class="spinner" id="spinner">
-                
+
                 </div>
             </div>
 
             <div class="column">
                 <div class="row-icons" id="rowIcons">
                     <div class="row-item">
-                        <i class="fas fa-check-circle" id="addBtn"></i>
+                        <i class="fas fa-check-circle" id="createBtn"></i>
                         <p>Criar</p>
                     </div>
                     <div class="row-item">
@@ -44,117 +46,122 @@
                     </div>
                 </div>
                 <div class="row-back">
-                    <a href="../../index.html" class="back">Menu</a>
+                    <a href="../../index.html" class="back"><i class="fas fa-angle-double-right"></i> Menu <i class="fas fa-angle-double-left"></i></a>
                 </div>
-            </div> -->
-            <div class="header-banner">
-                <h1>Vendedores</h1>
             </div>
-            <div class="central-column">
-                <form action="">
-                    <div class="row">
-                        <div class="name input">
-                            <label for="name" id="labelName">Nome</label>
-                            <input type="text" id="inputName" name="name" autocomplete="off" required style="text-transform: uppercase;">
-                        </div>
-                        <div class="cpf input">
-                            <label for="cpf" id="labelCpf">CPF</label>
-                            <input type="text" id="inputCpf" name="cpf" autocomplete="off" required>
-                        </div>
-                        <div class="rg input">
-                            <label for="rg" id="labelRg">RG</label>
-                            <input type="text" id="inputRg" name="rg" autocomplete="off" required> 
-                        </div>
-                        <div class="birthday input">
-                            <label for="birthday" id="labelBirthday">Dt Nasc</label>
-                            <input type="date" id="inputBirthday" name="birthday" autocomplete="off" required> 
-                        </div>
-                         <div class="gender input">
-                            <label for="gender" id="labelRg">Gênero</label>
-                            <select name="gender" id="inputGender" class="gender" required>
-                                <option value="" selected></option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Feminino">Feminino</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="cep input">
-                            <label for="cep" id="labelCep">CEP</label>
-                            <input type="text" id="inputCep" name="cep" required autocomplete="off"> 
-                        </div>
-                        <div class="adress input">
-                            <label for="adress" id="labelAdress">Endereço</label>
-                            <input type="text" id="inputAdress" name="adress" required readonly> 
-                        </div>
-                        <div class="number input">
-                            <label for="number" id="labelNumber">Nº</label>
-                            <input type="text" id="inputNumber" name="number" required> 
-                        </div>
-                        <div class="comp input">
-                            <label for="comp" id="labelComp">Comp.</label>
-                            <input type="text" id="inputComp" name="comp" required> 
-                        </div>
-                        <div class="district input">
-                            <label for="district" id="labelDistrict">Bairro</label>
-                            <input type="text" id="inputDistrict" name="district" required readonly>  
-                        </div>
-                        <div class="city input">
-                            <label for="city" id="labelCity">Cidade</label>
-                            <input type="text" id="inputCity" name="city" required readonly> 
-                        </div>
-                        <div class="uf input">
-                            <label for="uf" id="labelUf">UF</label>
-                            <input type="text" id="inputUf" name="uf" required readonly> 
-                        </div>
-                    </div>
 
-                    <div class="row contact">
-                        <div class="telephone input">
-                            <label for="telephone" id="labelTelephone">Telefone</label>
-                            <input type="tel" id="inputTelephone" name="telephone" required> 
-                        </div>
-                        <div class="cellphone input">
-                            <label for="cellphone" id="labelCellphone">Celular</label>
-                            <input type="tel" id="inputCellphone" name="cellphone" required> 
-                        </div>
-                    </div>
-
-                    <div class="column">
-                        <div class="row-icons">
-                            <div class="row-item">
-                                <i class="fas fa-check-circle" id="addBtn" type="submit"></i>
-                                <p>Salvar</p>
-                            </div>
-                            <div class="row-item">
-                                <i class="fas fa-times-circle" id="clearBtn"></i>
-                                <p>Limpar</p>
-                            </div>
-                            <div class="row-item">
-                                <i class="fas fa-chevron-circle-left" id="backBtn"></i>
-                                <p>Voltar</p>
-                            </div>
-                        </div>
-                        <div class="row-back">
-                            <a href="../../index.html" class="back">Menu</a>
-                        </div>
-                    </div>
-                </form>
-            </div><!--central-column-->
         </div>
 
-       <!--  <div id="modal-container" class="modal-container">
-            <div class="modal"> -->
+        <div id="modal-container" class="modal-container">
+            <div class="modal">
 
- <!--            </div>
-        </div> -->
+                <div class="header-banner">
+                    <h1 id="title"></h1>
+                </div>
+
+                <div class="central-column">
+                    <form action="">
+                        <div class="row">
+                            <div class="id input">
+                                <label for="id" id="labelId">ID</label>
+                                <input type="text" id="inputId" name="id" autocomplete="off" readonly>
+                            </div>
+                            <div class="name input">
+                                <label for="name" id="labelName">Nome</label>
+                                <input type="text" id="inputName" name="name" autocomplete="off" required>
+                            </div>
+                            <div class="cpf input">
+                                <label for="cpf" id="labelCpf">CPF</label>
+                                <input type="text" id="inputCpf" name="cpf" autocomplete="off" required>
+                            </div>
+                            <div class="rg input">
+                                <label for="rg" id="labelRg">RG</label>
+                                <input type="text" id="inputRg" name="rg" autocomplete="off">
+                            </div>
+                            <div class="birthday input">
+                                <label for="birthday" id="labelBirthday">Dt Nasc</label>
+                                <input type="date" id="inputBirthday" name="birthday" autocomplete="off">
+                            </div>
+                            <div class="gender input">
+                                <label for="gender" id="labelRg">Gênero</label>
+                                <select name="gender" id="inputGender" class="gender" required>
+                                    <option value="" selected></option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="cep input">
+                                <label for="cep" id="labelCep">CEP</label>
+                                <input type="text" id="inputCep" name="cep" autocomplete="off">
+                            </div>
+                            <div class="adress input">
+                                <label for="adress" id="labelAdress">Endereço</label>
+                                <input type="text" id="inputAdress" name="adress" readonly>
+                            </div>
+                            <div class="number input">
+                                <label for="number" id="labelNumber">Nº</label>
+                                <input type="text" id="inputNumber" name="number">
+                            </div>
+                            <div class="comp input">
+                                <label for="comp" id="labelComp">Comp.</label>
+                                <input type="text" id="inputComp" name="comp">
+                            </div>
+                            <div class="district input">
+                                <label for="district" id="labelDistrict">Bairro</label>
+                                <input type="text" id="inputDistrict" name="district" readonly>
+                            </div>
+                            <div class="city input">
+                                <label for="city" id="labelCity">Cidade</label>
+                                <input type="text" id="inputCity" name="city" readonly>
+                            </div>
+                            <div class="uf input">
+                                <label for="uf" id="labelUf">UF</label>
+                                <input type="text" id="inputUf" name="uf" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row contact">
+                            <div class="telephone input">
+                                <label for="telephone" id="labelTelephone">Telefone</label>
+                                <input type="tel" id="inputTelephone" name="telephone">
+                            </div>
+                            <div class="cellphone input">
+                                <label for="cellphone" id="labelCellphone">Celular</label>
+                                <input type="tel" id="inputCellphone" name="cellphone">
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="row-icons">
+                                <div class="row-item">
+                                    <i class="fas fa-check-circle" id="addBtn"></i>
+                                    <p>Salvar</p>
+                                </div>
+                                <div class="row-item">
+                                    <i class="fas fa-times-circle" id="clearBtn"></i>
+                                    <p>Limpar</p>
+                                </div>
+                                <div class="row-item">
+                                    <i class="fas fa-chevron-circle-left" id="backBtn"></i>
+                                    <p>Voltar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div><!--central-column-->
+            </div>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="../variaveis.js"></script>
     <script src="inputmask.js"></script>
-    <script src="vendedores.js"></script>
+    <script type="module" src="vendedores.js"></script>
+    <script type="module" src="modal.js"></script>
 </body>
+
 </html>

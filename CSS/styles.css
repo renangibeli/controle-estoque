@@ -88,10 +88,9 @@ main .row-items-details i {
 main .global-container-options {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-  width: 80%;
-  height: 90%;
+  width: 98%;
+  height: 98%;
   background-color: whitesmoke;
   padding: 20px;
   color: rgba(0, 0, 0, 0.5);
@@ -114,13 +113,15 @@ main .global-container-options .central-column {
 main .global-container-options .row {
   display: flex;
   width: 100%;
-  padding: 15px 0;
+  padding: 0.9375rem 0;
   text-align: left;
 }
 main .global-container-options .row .input {
   margin: 10px;
 }
-main .global-container-options .row input, main .global-container-options .row select, main .global-container-options .row label {
+main .global-container-options .row input,
+main .global-container-options .row select,
+main .global-container-options .row label {
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
   padding: 5px;
@@ -139,70 +140,15 @@ main .global-container-options .row .productID {
 }
 main .global-container-options .row .description {
   width: 100%;
-  padding-left: 10px;
 }
 main .global-container-options .row .quantity {
   width: 20%;
-  padding-left: 10px;
 }
 main .global-container-options .row .category {
   width: 25%;
 }
 main .global-container-options .row .price {
   width: 25%;
-  padding-left: 10px;
-}
-main .global-container-options .row .size {
-  width: 25%;
-  padding-left: 10px;
-}
-main .global-container-options .row .size select {
-  padding: 0;
-}
-main .global-container-options .row .color {
-  width: 25%;
-  padding-left: 10px;
-}
-main .global-container-options .row .name {
-  width: 40%;
-}
-main .global-container-options .row .cpf, main .global-container-options .row .rg {
-  width: 10%;
-}
-main .global-container-options .row .birthday {
-  width: 15%;
-}
-main .global-container-options .row .cep {
-  width: 15%;
-}
-main .global-container-options .row .adress {
-  width: 50%;
-}
-main .global-container-options .row .number {
-  width: 10%;
-}
-main .global-container-options .row .comp {
-  width: 15%;
-}
-main .global-container-options .row .district {
-  width: 40%;
-}
-main .global-container-options .row .city {
-  width: 15%;
-}
-main .global-container-options .row .uf {
-  width: 5%;
-}
-main .global-container-options .contact {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-main .global-container-options .contact .telephone {
-  width: 10%;
-}
-main .global-container-options .contact .cellphone {
-  width: 10%;
 }
 main .global-container-options .invalid-input {
   border: thin solid #c20202;
@@ -217,6 +163,7 @@ main .global-container-options .column {
   width: 100%;
   align-items: center;
   justify-content: center;
+  padding: 10px 0;
 }
 main .global-container-options .row-icons {
   display: flex;
@@ -245,7 +192,7 @@ main .global-container-options .row-back {
   justify-content: center;
 }
 main .global-container-options .back {
-  padding-top: 35px;
+  padding-top: 20px;
   text-decoration: none;
   font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.5);
@@ -258,29 +205,32 @@ main .global-container-options .back:hover {
 }
 
 table {
-  margin: 20px 0;
+  margin: 10px 0;
   box-shadow: 0 5px 30px darkgrey;
+  min-width: 1280px;
 }
 
-table, th, td {
-  font-size: 0.75rem;
+table,
+th,
+td {
+  font-size: 1rem;
   border-collapse: collapse;
-  padding: 5px 10px;
+  padding: 5px;
   text-align: center;
   font-weight: normal;
 }
 
 tbody {
   display: block;
-  height: 390px;
+  max-height: 390px;
   overflow: auto;
 }
 
-thead, tbody tr {
+thead,
+tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
-  /* even columns width , fix width of table too*/
 }
 
 tbody::-webkit-scrollbar {
@@ -339,11 +289,13 @@ tr.selected td {
     transform: rotate(360deg);
   }
 }
-.fa-print, .fa-edit {
+.fa-print,
+.fa-edit {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.fa-file-excel, .fa-check-circle {
+.fa-file-excel,
+.fa-check-circle {
   color: green;
 }
 
@@ -409,6 +361,70 @@ tr.selected td {
   width: 100%;
   padding: 0.9375rem 0;
   text-align: left;
+}
+.modal-container .row .input {
+  margin: 10px;
+}
+.modal-container .row input,
+.modal-container .row select,
+.modal-container .row label {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  padding: 5px;
+  width: 100%;
+}
+.modal-container .row label {
+  font-size: 1.5rem;
+}
+.modal-container .row input:read-only {
+  color: #000000a6;
+  font-weight: bolder;
+  opacity: 0.3;
+}
+.modal-container .row .id {
+  width: 10%;
+}
+.modal-container .row .name {
+  width: 40%;
+}
+.modal-container .row .cpf,
+.modal-container .row .rg {
+  width: 15%;
+}
+.modal-container .row .birthday {
+  width: 15%;
+}
+.modal-container .row .cep {
+  width: 15%;
+}
+.modal-container .row .adress {
+  width: 50%;
+}
+.modal-container .row .number {
+  width: 10%;
+}
+.modal-container .row .comp {
+  width: 15%;
+}
+.modal-container .row .district {
+  width: 40%;
+}
+.modal-container .row .city {
+  width: 15%;
+}
+.modal-container .row .uf {
+  width: 5%;
+}
+.modal-container .contact {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.modal-container .contact .telephone {
+  width: 10%;
+}
+.modal-container .contact .cellphone {
+  width: 10%;
 }
 .modal-container .invalid-input {
   border: thin solid #c20202;
