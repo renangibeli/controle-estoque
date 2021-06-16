@@ -415,6 +415,12 @@ tr.selected td {
 .modal-container .row .uf {
   width: 5%;
 }
+.modal-container .row .razao-social {
+  width: 100%;
+}
+.modal-container .row .cnpj {
+  width: 20%;
+}
 .modal-container .contact {
   align-items: center;
   justify-content: center;

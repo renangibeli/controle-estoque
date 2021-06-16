@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     <main>
         <div class="global-container-options">
             <div class="header-banner">
-                <h1>Vendedores</h1>
+                <h1>Fornecedores</h1>
             </div>
 
             <div id="mainTable">
@@ -70,29 +70,13 @@
                                 <label for="id" id="labelId">ID</label>
                                 <input type="text" id="inputId" name="id" autocomplete="off" readonly>
                             </div>
-                            <div class="name input">
-                                <label for="name" id="labelName">Nome</label>
+                            <div class="razao-social input">
+                                <label for="name" id="labelName">Razão Social</label>
                                 <input type="text" id="inputName" name="name" autocomplete="off" required>
                             </div>
-                            <div class="cpf input">
-                                <label for="cpf" id="labelCpf">CPF</label>
-                                <input type="text" id="inputCpf" name="cpf" autocomplete="off" required>
-                            </div>
-                            <div class="rg input">
-                                <label for="rg" id="labelRg">RG</label>
-                                <input type="text" id="inputRg" name="rg" autocomplete="off">
-                            </div>
-                            <div class="birthday input">
-                                <label for="birthday" id="labelBirthday">Dt Nasc</label>
-                                <input type="date" id="inputBirthday" name="birthday" autocomplete="off">
-                            </div>
-                            <div class="gender input">
-                                <label for="gender" id="labelRg">Gênero</label>
-                                <select name="gender" id="inputGender" class="gender" required>
-                                    <option value="" selected></option>
-                                    <option value="Masculino">Masculino</option>
-                                    <option value="Feminino">Feminino</option>
-                                </select>
+                            <div class="cnpj input">
+                                <label for="cnpj" id="labelCnpj">CNPJ</label>
+                                <input type="text" id="inputCnpj" name="cnpj" autocomplete="off" required>
                             </div>
                         </div>
 
@@ -164,8 +148,8 @@
 
     <script src="../variaveis.js"></script>
     <script src="../services/inputmask.js"></script>
-    <script type="module" src="vendedores.js"></script>
-    <script type="module" src="modalvendedor.js"></script>
+    <script type="module" src="fornecedores.js"></script>
+    <script type="module" src="modalfornecedor.js"></script>
 
     <script type="text/javascript" src="../services/tableToExcel.js"></script>
     <script>
@@ -173,7 +157,7 @@
 
         excelBtn.addEventListener('click', () => TableToExcel.convert(document.querySelector('#mainTable'),
          {
-            name: "vendedores.xlsx",
+            name: "fornecedores.xlsx",
             sheet: {
                 name: "Planilha 1",
             }

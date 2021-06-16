@@ -369,6 +369,86 @@ function createTable(headerFields, result, divTable, divSpinner, divIcons, table
         })
         break
 
+      case "fornecedor":
+        result.map(fornecedor => {
+          const tr = document.createElement('tr')
+
+          //id
+          const tdId = document.createElement('td')
+          tdId.innerHTML = fornecedor.id
+          tdId.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdId)
+
+          //nome
+          const tdName = document.createElement('td')
+          tdName.innerHTML = fornecedor.nome
+          tdName.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdName)
+
+          //cpf
+          const tdCnpj = document.createElement('td')
+          tdCnpj.innerHTML = fornecedor.cnpj
+          tdCnpj.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdCnpj)
+
+          //cep
+          const tdCep = document.createElement('td')
+          tdCep.innerHTML = fornecedor.cep
+          tdCep.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdCep)
+
+          //endereco
+          const tdEndereco = document.createElement('td')
+          tdEndereco.innerHTML = fornecedor.endereco
+          tdEndereco.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdEndereco)
+
+          //numero
+          const tdNumero = document.createElement('td')
+          tdNumero.innerHTML = fornecedor.numero
+          tdNumero.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdNumero)
+
+          //complemento
+          const tdComplemento = document.createElement('td')
+          tdComplemento.innerHTML = fornecedor.complemento
+          tdComplemento.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdComplemento)
+
+          //bairro
+          const tdBairro = document.createElement('td')
+          tdBairro.innerHTML = fornecedor.bairro
+          tdBairro.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdBairro)
+
+          //cidade
+          const tdCidade = document.createElement('td')
+          tdCidade.innerHTML = fornecedor.cidade
+          tdCidade.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdCidade)
+
+          //uf
+          const tdUf = document.createElement('td')
+          tdUf.innerHTML = fornecedor.uf
+          tdUf.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdUf)
+
+          //telefone
+          const tdTelefone = document.createElement('td')
+          tdTelefone.innerHTML = fornecedor.telefone
+          tdTelefone.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdTelefone)
+
+          //celular
+          const tdCelular = document.createElement('td')
+          tdCelular.innerHTML = fornecedor.celular
+          tdCelular.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdCelular)
+
+          tbody.appendChild(tr)
+        })
+        break
+
       default:
         break
     }
@@ -379,19 +459,39 @@ function createTable(headerFields, result, divTable, divSpinner, divIcons, table
   }
 }
 
-function validateFieldsVendedor(name, cpf){
+function validateFieldsVendedor(name, cpf) {
   let [nameValid, cpfValid] = [false, false]
-  
+
   if (name !== '') {
     nameValid = true
   }
 
-  
-  if (cpf !== '') {
+  if (cpf !== '' && cpf.length == 11) {
     cpfValid = true
   }
 
-  return { nameValid, cpfValid }
+  return {
+    nameValid,
+    cpfValid
+  }
+
+}
+
+function validateFieldsFornecedor(name, cnpj) {
+  let [nameValid, cnpjValid] = [false, false]
+
+  if (name !== '') {
+    nameValid = true
+  }
+
+  if (cnpj !== '' && cnpj.length == 14) {
+    cnpjValid = true
+  }
+
+  return {
+    nameValid,
+    cnpjValid
+  }
 
 }
 
@@ -409,5 +509,6 @@ export const clientService = {
   removeInvalidClass,
   addInvalidClass,
   createTable,
-  validateFieldsVendedor
+  validateFieldsVendedor,
+  validateFieldsFornecedor
 }

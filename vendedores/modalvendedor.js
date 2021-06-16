@@ -71,10 +71,12 @@ addBtn.addEventListener('click', () => {
         actionToDo = 'realizado'
     }
 
+    let unmaskCpf = inputCpf.inputmask.unmaskedvalue()
+
     const {
         nameValid,
         cpfValid
-    } = clientService.validateFieldsVendedor(inputName.value, inputCpf.value)
+    } = clientService.validateFieldsVendedor(inputName.value, unmaskCpf)
 
     if (nameValid && cpfValid) {
         dbToDo(`${serverToUse}`, {
