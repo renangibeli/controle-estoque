@@ -44,6 +44,10 @@
                         <i class="fas fa-times-circle" id="excludeBtn"></i>
                         <p>Excluir</p>
                     </div>
+                    <div class="row-item">
+                        <i class="fas fa-file-excel" id="excelBtn"></i>
+                        <p>Excel</p>
+                    </div>
                 </div>
                 <div class="row-back">
                     <a href="../../index.html" class="back"><i class="fas fa-angle-double-right"></i> Menu <i class="fas fa-angle-double-left"></i></a>
@@ -162,6 +166,19 @@
     <script src="inputmask.js"></script>
     <script type="module" src="vendedores.js"></script>
     <script type="module" src="modal.js"></script>
+
+    <script type="text/javascript" src="../services/tableToExcel.js"></script>
+    <script>
+        const excelBtn = document.querySelector('#excelBtn')
+
+        excelBtn.addEventListener('click', () => TableToExcel.convert(document.querySelector('#mainTable'),
+         {
+            name: "vendedores.xlsx",
+            sheet: {
+                name: "Planilha 1",
+            }
+        }))
+    </script>
 </body>
 
 </html>

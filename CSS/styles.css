@@ -100,7 +100,7 @@ main .global-container-options {
 }
 main .global-container-options .header-banner {
   display: flex;
-  padding: 20px;
+  padding: 5px;
   font-size: 1.5rem;
   text-align: center;
 }
