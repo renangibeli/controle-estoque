@@ -204,53 +204,52 @@ main .global-container-options .back:hover {
   transform: scale(1.1);
 }
 
+.table-div {
+  overflow-y: auto;
+}
+.table-div::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.table-div::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+.table-div::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+.table-div::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 table {
   margin: 10px 0;
   box-shadow: 0 5px 30px darkgrey;
-  min-width: 1280px;
 }
 
 table,
 th,
 td {
-  font-size: 1rem;
+  font-size: 0.85rem;
   border-collapse: collapse;
   padding: 5px;
   font-weight: normal;
-  text-align: center;
+  text-align: left;
 }
 
-tbody {
-  display: block;
-  max-height: 390px;
-  overflow: auto;
+/* tbody {
+    display: block;
+    max-height: 390px;
+    overflow: auto;
 }
 
 thead,
 tbody tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-
-tbody::-webkit-scrollbar {
-  width: 5px;
-}
-
-tbody::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-}
-
-tbody::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-}
-
-tbody::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.75);
-}
-
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+} */
 th {
   background-color: rgba(0, 0, 0, 0.75);
   color: whitesmoke;
@@ -427,7 +426,7 @@ tr.selected td {
 .modal-container .contact {
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
 }
 .modal-container .contact .telephone {
   width: 10%;

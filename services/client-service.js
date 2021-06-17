@@ -168,7 +168,7 @@ function addInvalidClass(input, label) {
 function createTable(headerFields, result, divTable, divSpinner, divIcons, tableType) {
   if (result.length === 0) {
     const p = document.createElement('p')
-    p.innerHTML = 'Não existem produtos cadastrados'
+    p.innerHTML = 'Não existem dados cadastrados'
     p.setAttribute('style', 'padding: 20px')
 
     divIcons.setAttribute('style', 'display: none')
@@ -203,68 +203,68 @@ function createTable(headerFields, result, divTable, divSpinner, divIcons, table
     switch (tableType) {
       case "estoque":
         //criar linhas da tabela com dados do banco
-        result.map(product => {
+        result.map(result => {
           const tr = document.createElement('tr')
 
           //id
           const tdId = document.createElement('td')
-          tdId.innerHTML = product.id
+          tdId.innerHTML = result.id
           tdId.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdId)
 
           //descrição
           const tdDescription = document.createElement('td')
-          tdDescription.innerHTML = product.description
+          tdDescription.innerHTML = result.description
           tdDescription.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdDescription)
 
           //Entrada
           const tdEntry = document.createElement('td')
-          tdEntry.innerHTML = product.stock.entry
+          tdEntry.innerHTML = result.stock.entry
           tdEntry.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdEntry)
 
           //Saida
           const tdOut = document.createElement('td')
-          tdOut.innerHTML = product.stock.out
+          tdOut.innerHTML = result.stock.out
           tdOut.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdOut)
 
           //quantidade
           const tdQuantity = document.createElement('td')
-          tdQuantity.innerHTML = product.stock.quantity
+          tdQuantity.innerHTML = result.stock.quantity
           tdQuantity.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdQuantity)
 
           //genero
           const tdGender = document.createElement('td')
-          tdGender.innerHTML = product.gender
+          tdGender.innerHTML = result.gender
           tdGender.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdGender)
 
           //Preço de compra
           const tdBuyPrice = document.createElement('td')
-          const formatedBuyPrice = clientService.formatCurrency(product.buyPrice)
+          const formatedBuyPrice = clientService.formatCurrency(result.buyPrice)
           tdBuyPrice.innerHTML = formatedBuyPrice
           tdBuyPrice.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdBuyPrice)
 
           //preço de venda
           const tdSellPrice = document.createElement('td')
-          const formatedSellPrice = clientService.formatCurrency(product.sellPrice)
+          const formatedSellPrice = clientService.formatCurrency(result.sellPrice)
           tdSellPrice.innerHTML = formatedSellPrice
           tdSellPrice.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdSellPrice)
 
           //tamanho
           const tdSize = document.createElement('td')
-          tdSize.innerHTML = product.size
+          tdSize.innerHTML = result.size
           tdSize.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdSize)
 
           //cor
           const tdColor = document.createElement('td')
-          tdColor.innerHTML = product.color
+          tdColor.innerHTML = result.color
           tdColor.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdColor)
 
@@ -272,96 +272,96 @@ function createTable(headerFields, result, divTable, divSpinner, divIcons, table
         })
         break
       case "vendedor":
-        result.map(vendedor => {
+        result.map(result => {
           const tr = document.createElement('tr')
 
           //nome
           const tdId = document.createElement('td')
-          tdId.innerHTML = vendedor.id
+          tdId.innerHTML = result.id
           tdId.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdId)
 
           //nome
           const tdName = document.createElement('td')
-          tdName.innerHTML = vendedor.nome
+          tdName.innerHTML = result.nome
           tdName.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdName)
 
           //cpf
           const tdCpf = document.createElement('td')
-          tdCpf.innerHTML = vendedor.cpf
+          tdCpf.innerHTML = result.cpf
           tdCpf.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdCpf)
 
           //rg
           const tdRg = document.createElement('td')
-          tdRg.innerHTML = vendedor.rg
+          tdRg.innerHTML = result.rg
           tdRg.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdRg)
 
           //Data de nascimento
           const tdDtNasc = document.createElement('td')
-          tdDtNasc.innerHTML = vendedor.dtNasc.split('-').reverse().join('/')
+          tdDtNasc.innerHTML = result.dtNasc.split('-').reverse().join('/')
           tdDtNasc.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdDtNasc)
 
           //genero
           const tdGenero = document.createElement('td')
-          tdGenero.innerHTML = vendedor.genero
+          tdGenero.innerHTML = result.genero
           tdGenero.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdGenero)
 
           //cep
           const tdCep = document.createElement('td')
-          tdCep.innerHTML = vendedor.cep
+          tdCep.innerHTML = result.cep
           tdCep.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdCep)
 
           //endereco
           const tdEndereco = document.createElement('td')
-          tdEndereco.innerHTML = vendedor.endereco
+          tdEndereco.innerHTML = result.endereco
           tdEndereco.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdEndereco)
 
           //numero
           const tdNumero = document.createElement('td')
-          tdNumero.innerHTML = vendedor.numero
+          tdNumero.innerHTML = result.numero
           tdNumero.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdNumero)
 
           //complemento
           const tdComplemento = document.createElement('td')
-          tdComplemento.innerHTML = vendedor.complemento
+          tdComplemento.innerHTML = result.complemento
           tdComplemento.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdComplemento)
 
           //bairro
           const tdBairro = document.createElement('td')
-          tdBairro.innerHTML = vendedor.bairro
+          tdBairro.innerHTML = result.bairro
           tdBairro.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdBairro)
 
           //cidade
           const tdCidade = document.createElement('td')
-          tdCidade.innerHTML = vendedor.cidade
+          tdCidade.innerHTML = result.cidade
           tdCidade.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdCidade)
 
           //uf
           const tdUf = document.createElement('td')
-          tdUf.innerHTML = vendedor.uf
+          tdUf.innerHTML = result.uf
           tdUf.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdUf)
 
           //telefone
           const tdTelefone = document.createElement('td')
-          tdTelefone.innerHTML = vendedor.telefone
+          tdTelefone.innerHTML = result.telefone
           tdTelefone.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdTelefone)
 
           //celular
           const tdCelular = document.createElement('td')
-          tdCelular.innerHTML = vendedor.celular
+          tdCelular.innerHTML = result.celular
           tdCelular.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdCelular)
 
@@ -370,78 +370,78 @@ function createTable(headerFields, result, divTable, divSpinner, divIcons, table
         break
 
       case "fornecedor":
-        result.map(fornecedor => {
+        result.map(result => {
           const tr = document.createElement('tr')
 
           //id
           const tdId = document.createElement('td')
-          tdId.innerHTML = fornecedor.id
+          tdId.innerHTML = result.id
           tdId.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdId)
 
           //nome
           const tdName = document.createElement('td')
-          tdName.innerHTML = fornecedor.nome
+          tdName.innerHTML = result.nome
           tdName.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdName)
 
           //cpf
           const tdCnpj = document.createElement('td')
-          tdCnpj.innerHTML = fornecedor.cnpj
+          tdCnpj.innerHTML = result.cnpj
           tdCnpj.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdCnpj)
 
           //cep
           const tdCep = document.createElement('td')
-          tdCep.innerHTML = fornecedor.cep
+          tdCep.innerHTML = result.cep
           tdCep.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdCep)
 
           //endereco
           const tdEndereco = document.createElement('td')
-          tdEndereco.innerHTML = fornecedor.endereco
+          tdEndereco.innerHTML = result.endereco
           tdEndereco.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdEndereco)
 
           //numero
           const tdNumero = document.createElement('td')
-          tdNumero.innerHTML = fornecedor.numero
+          tdNumero.innerHTML = result.numero
           tdNumero.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdNumero)
 
           //complemento
           const tdComplemento = document.createElement('td')
-          tdComplemento.innerHTML = fornecedor.complemento
+          tdComplemento.innerHTML = result.complemento
           tdComplemento.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdComplemento)
 
           //bairro
           const tdBairro = document.createElement('td')
-          tdBairro.innerHTML = fornecedor.bairro
+          tdBairro.innerHTML = result.bairro
           tdBairro.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdBairro)
 
           //cidade
           const tdCidade = document.createElement('td')
-          tdCidade.innerHTML = fornecedor.cidade
+          tdCidade.innerHTML = result.cidade
           tdCidade.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdCidade)
 
           //uf
           const tdUf = document.createElement('td')
-          tdUf.innerHTML = fornecedor.uf
+          tdUf.innerHTML = result.uf
           tdUf.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdUf)
 
           //telefone
           const tdTelefone = document.createElement('td')
-          tdTelefone.innerHTML = fornecedor.telefone
+          tdTelefone.innerHTML = result.telefone
           tdTelefone.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdTelefone)
 
           //celular
           const tdCelular = document.createElement('td')
-          tdCelular.innerHTML = fornecedor.celular
+          tdCelular.innerHTML = result.celular
           tdCelular.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdCelular)
 
@@ -450,24 +450,129 @@ function createTable(headerFields, result, divTable, divSpinner, divIcons, table
         break
 
         case "metodos-pagamentos":
-        result.map(metodos => {
+        result.map(result => {
           const tr = document.createElement('tr')
 
           //id
           const tdId = document.createElement('td')
-          tdId.innerHTML = metodos.id
+          tdId.innerHTML = result.id
           tdId.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdId)
 
           //nome
           const tdTipo = document.createElement('td')
-          tdTipo.innerHTML = metodos.tipo
+          tdTipo.innerHTML = result.tipo
           tdTipo.setAttribute('data-b-a-s', 'thin')
           tr.appendChild(tdTipo)
 
           tbody.appendChild(tr)
         })
         break
+
+        case "clientes":
+        result.map(result => {
+          const tr = document.createElement('tr')
+
+          //nome
+          const tdId = document.createElement('td')
+          tdId.innerHTML = result.id
+          tdId.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdId)
+
+          //nome
+          const tdName = document.createElement('td')
+          tdName.innerHTML = result.nome
+          tdName.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdName)
+
+          //cpf
+          const tdCpf = document.createElement('td')
+          tdCpf.innerHTML = result.cpf
+          tdCpf.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdCpf)
+
+          //rg
+          const tdRg = document.createElement('td')
+          tdRg.innerHTML = result.rg
+          tdRg.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdRg)
+
+          //Data de nascimento
+          const tdDtNasc = document.createElement('td')
+          tdDtNasc.innerHTML = result.dtNasc.split('-').reverse().join('/')
+          tdDtNasc.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdDtNasc)
+
+          //genero
+          const tdGenero = document.createElement('td')
+          tdGenero.innerHTML = result.genero
+          tdGenero.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdGenero)
+
+          //cep
+          const tdCep = document.createElement('td')
+          tdCep.innerHTML = result.cep
+          tdCep.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdCep)
+
+          //endereco
+          const tdEndereco = document.createElement('td')
+          tdEndereco.innerHTML = result.endereco
+          tdEndereco.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdEndereco)
+
+          //numero
+          const tdNumero = document.createElement('td')
+          tdNumero.innerHTML = result.numero
+          tdNumero.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdNumero)
+
+          //complemento
+          const tdComplemento = document.createElement('td')
+          tdComplemento.innerHTML = result.complemento
+          tdComplemento.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdComplemento)
+
+          //bairro
+          const tdBairro = document.createElement('td')
+          tdBairro.innerHTML = result.bairro
+          tdBairro.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdBairro)
+
+          //cidade
+          const tdCidade = document.createElement('td')
+          tdCidade.innerHTML = result.cidade
+          tdCidade.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdCidade)
+
+          //uf
+          const tdUf = document.createElement('td')
+          tdUf.innerHTML = result.uf
+          tdUf.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdUf)
+
+          //email
+          const tdEmail = document.createElement('td')
+          tdEmail.innerHTML = result.email
+          tdEmail.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdEmail)
+
+          //telefone
+          const tdTelefone = document.createElement('td')
+          tdTelefone.innerHTML = result.telefone
+          tdTelefone.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdTelefone)
+
+          //celular
+          const tdCelular = document.createElement('td')
+          tdCelular.innerHTML = result.celular
+          tdCelular.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdCelular)
+
+          tbody.appendChild(tr)
+        })
+        break
+
 
       default:
         break
@@ -494,7 +599,28 @@ function validateFieldsVendedor(name, cpf) {
     nameValid,
     cpfValid
   }
+}
 
+function validateFieldsCliente(name, cpf, email) {
+  let [nameValid, cpfValid, emailValid] = [false, false, false]
+
+  if (name !== '') {
+    nameValid = true
+  }
+
+  if (cpf !== '' && cpf.length == 11) {
+    cpfValid = true
+  }
+
+  if (email !== '' && email.includes('@')){
+    emailValid = true
+  }
+
+  return {
+    nameValid,
+    cpfValid,
+    emailValid
+  }
 }
 
 function validateFieldsFornecedor(name, cnpj) {
@@ -512,8 +638,9 @@ function validateFieldsFornecedor(name, cnpj) {
     nameValid,
     cnpjValid
   }
-
 }
+
+
 
 
 export const clientService = {
@@ -530,5 +657,6 @@ export const clientService = {
   addInvalidClass,
   createTable,
   validateFieldsVendedor,
-  validateFieldsFornecedor
+  validateFieldsFornecedor,
+  validateFieldsCliente
 }

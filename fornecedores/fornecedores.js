@@ -41,7 +41,18 @@ axios.get(`${server}/fornecedores`)
         })
     }
 })
-.catch()
+.catch(error => {
+    const p = document.createElement('p')
+    p.innerHTML = error
+    p.setAttribute('style', 'padding: 20px')
+
+    spinner.setAttribute('style', 'display: none')
+
+    const rowIcons = document.querySelector('#rowIcons')
+    rowIcons.setAttribute('style', 'display: none')
+
+    mainTable.appendChild(p)
+})
 
 //------>>>>>> INICIO - BOTÃO DE CADASTRAR <<<<<<------
 const createBtn = document.querySelector('#createBtn')

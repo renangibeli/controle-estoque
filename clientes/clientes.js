@@ -19,19 +19,20 @@ const inputDistrict = document.querySelector('#inputDistrict')
 const inputCity = document.querySelector('#inputCity')
 const inputUf = document.querySelector('#inputUf')
 
+const inputEmail = document.querySelector('#inputEmail')
 const inputTelephone = document.querySelector('#inputTelephone')
 const inputCellphone = document.querySelector('#inputCellphone')
 
-axios.get(`${server}/vendedores`)
+axios.get(`${server}/clientes`)
 .then(response => {
     const result = response.data
 
     const mainTable = document.querySelector('#mainTable')
     const spinner = document.querySelector('#displayNone')
-    const headerFields = ['ID', 'Nome', 'CPF', 'RG', 'Dt. Nasc.', 'Gênero', 'CEP', 'Endereço', 'Número', 'Complemento', 'Bairro', 'Cidade', 'UF', 'Telefone', 'Celular']
+    const headerFields = ['ID', 'Nome', 'CPF', 'RG', 'Dt. Nasc.', 'Gênero', 'CEP', 'Endereço', 'Número', 'Complemento', 'Bairro', 'Cidade', 'UF', 'Email', 'Telefone', 'Celular']
     const rowIcons = document.querySelector('#rowIcons')
 
-    clientService.createTable(headerFields, result, mainTable, spinner, rowIcons, "vendedor")
+    clientService.createTable(headerFields, result, mainTable, spinner, rowIcons, "clientes")
 
     // -->> SELEÇÃO DE LINHAS DENTRO DA TABELA HTML <<--
     let lines = table.getElementsByTagName("tr")
@@ -45,6 +46,7 @@ axios.get(`${server}/vendedores`)
     }
 })
 .catch(error => {
+    console.log(error)
     const p = document.createElement('p')
     p.innerHTML = error
     p.setAttribute('style', 'padding: 20px')
@@ -61,7 +63,7 @@ axios.get(`${server}/vendedores`)
 const createBtn = document.querySelector('#createBtn')
 createBtn.addEventListener('click', () => {
 
-    title.innerHTML = 'Cadastrar vendedores'
+    title.innerHTML = 'Cadastrar cliente'
     
     const modal = document.querySelector('#modal-container')
     modal.classList.add('show')
@@ -95,10 +97,11 @@ editBtn.addEventListener("click", () => {
         inputDistrict.value = selected[10].innerHTML
         inputCity.value = selected[11].innerHTML
         inputUf.value = selected[12].innerHTML
-        inputTelephone.value = selected[13].innerHTML
-        inputCellphone.value = selected[14].innerHTML
+        inputEmail.value = selected[13].innerHTML
+        inputTelephone.value = selected[14].innerHTML
+        inputCellphone.value = selected[15].innerHTML
 
-        title.innerHTML = 'Editar vendedores'
+        title.innerHTML = 'Editar cliente'
 
         const modal = document.querySelector('#modal-container')
         modal.classList.add('show')
@@ -118,16 +121,12 @@ excludeBtn.addEventListener('click', () => {
             let selected = selecteds[0]
             selected = selected.querySelectorAll("td")
         
-            axios.delete(`${server}/vendedores/${selected[0].innerHTML}`)
-            .then(window.alert(`Vendedor: ${selected[0].innerHTML} - ${selected[1].innerHTML} excluído com sucesso`))
+            axios.delete(`${server}/clientes/${selected[0].innerHTML}`)
+            .then(window.alert(`Cliente: ${selected[0].innerHTML} - ${selected[1].innerHTML} excluído com sucesso`))
             .catch(error => {
                 console.log(error)
             })
-        } else {
-            console.log('else')
         }
-        
-
     }
 })
 //------>>>>>> FIM - BOTÃO DE EXCLUIR <<<<<<------

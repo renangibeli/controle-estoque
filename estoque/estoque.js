@@ -165,7 +165,7 @@ axios.get(`${server}/estoque`)
             }
         })
     })
-    .catch((error) => {
+    .catch(error => {
         const p = document.createElement('p')
         p.innerHTML = error
         p.setAttribute('style', 'padding: 20px')

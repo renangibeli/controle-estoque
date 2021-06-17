@@ -20,7 +20,7 @@
                 <h1>Métodos de Pagamento</h1>
             </div>
 
-            <div id="mainTable">
+            <div id="mainTable" class="table-div">
 
             </div>
 
@@ -110,7 +110,7 @@
 
         excelBtn.addEventListener('click', () => TableToExcel.convert(document.querySelector('#mainTable'),
          {
-            name: "vendedores.xlsx",
+            name: "metodos-de-pagamento.xlsx",
             sheet: {
                 name: "Planilha 1",
             }
