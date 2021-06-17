@@ -270,8 +270,8 @@ td {
     font-size: 1rem;
     border-collapse: collapse;
     padding: 5px;
-    text-align: center;
     font-weight: normal;
+    text-align: center;
 }
 
 tbody {
@@ -286,6 +286,8 @@ tbody tr {
     width: 100%;
     table-layout: fixed;
 }
+
+
 
 tbody::-webkit-scrollbar {
     width: 5px;
@@ -516,6 +518,14 @@ tr.selected td {
         }
 
         //------>>>>> FIM: ESPAÇAMENTO DE REGISTRO FORNECEDORES <<<<<<------
+
+        //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO MÉTODOS DE PAGAMENTO <<<<<<------
+        
+        .method{
+            width: 100%;
+        }
+
+        //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO MÉTODOS DE PAGAMENTO <<<<<<------
     }
 
     .contact {

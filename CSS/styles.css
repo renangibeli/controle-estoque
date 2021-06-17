@@ -216,8 +216,8 @@ td {
   font-size: 1rem;
   border-collapse: collapse;
   padding: 5px;
-  text-align: center;
   font-weight: normal;
+  text-align: center;
 }
 
 tbody {
@@ -420,6 +420,9 @@ tr.selected td {
 }
 .modal-container .row .cnpj {
   width: 20%;
+}
+.modal-container .row .method {
+  width: 100%;
 }
 .modal-container .contact {
   align-items: center;

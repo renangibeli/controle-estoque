@@ -449,6 +449,26 @@ function createTable(headerFields, result, divTable, divSpinner, divIcons, table
         })
         break
 
+        case "metodos-pagamentos":
+        result.map(metodos => {
+          const tr = document.createElement('tr')
+
+          //id
+          const tdId = document.createElement('td')
+          tdId.innerHTML = metodos.id
+          tdId.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdId)
+
+          //nome
+          const tdTipo = document.createElement('td')
+          tdTipo.innerHTML = metodos.tipo
+          tdTipo.setAttribute('data-b-a-s', 'thin')
+          tr.appendChild(tdTipo)
+
+          tbody.appendChild(tr)
+        })
+        break
+
       default:
         break
     }

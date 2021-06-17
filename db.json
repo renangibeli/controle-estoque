@@ -374,23 +374,6 @@
       "id": 7
     },
     {
-      "nome": "Felipe Simões Dourado",
-      "cpf": "020.220.202-22",
-      "rg": "",
-      "dtNasc": "",
-      "genero": "",
-      "cep": "",
-      "endereco": "",
-      "numero": "",
-      "complemento": "",
-      "bairro": "",
-      "cidade": "",
-      "uf": "",
-      "telefone": "",
-      "celular": "",
-      "id": 8
-    },
-    {
       "nome": "Rafaela Simões Dourado",
       "cpf": "191.919.191-91",
       "rg": "",
@@ -567,18 +550,48 @@
       "id": 10
     },
     {
-      "nome": "Rivera Móveis LTDA",
-      "cnpj": "00.123.456/0001-12",
-      "cep": "06404-326",
-      "endereco": "Avenida Trindade",
-      "numero": "374",
-      "complemento": "apto 31",
-      "bairro": "Bethaville I",
-      "cidade": "Barueri",
+      "nome": "teste",
+      "cnpj": "10.121.212/1646-85",
+      "cep": "05396-220",
+      "endereco": "Rua Milton Vieira",
+      "numero": "20",
+      "complemento": "",
+      "bairro": "Parque dos Príncipes",
+      "cidade": "São Paulo",
       "uf": "SP",
-      "telefone": "(11) 3761-0186",
+      "telefone": "",
       "celular": "(11) 9 7496-9944",
-      "id": 11
+      "id": 12
+    }
+  ],
+  "metodos-pagamentos": [
+    {
+      "id": 1,
+      "tipo": "Dinheiro"
+    },
+    {
+      "id": 2,
+      "tipo": "Cheque"
+    },
+    {
+      "id": 3,
+      "tipo": "Cartão de Crédito"
+    },
+    {
+      "id": 4,
+      "tipo": "Cartão de Débito"
+    },
+    {
+      "id": 5,
+      "tipo": "Crédito Loja"
+    },
+    {
+      "id": 6,
+      "tipo": "Boleto"
+    },
+    {
+      "id": 7,
+      "tipo": "Outros"
     }
   ]
 }
