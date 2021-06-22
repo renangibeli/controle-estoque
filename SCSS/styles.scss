@@ -100,7 +100,6 @@ main {
     .global-container-options {
         display: flex;
         align-items: center;
-
         flex-direction: column;
         width: 98%;
         height: 98%;
@@ -177,9 +176,7 @@ main {
                 width: 25%;
             }
 
-            .color {
-                
-            }
+            .color {}
 
             //------>>>>> FIM: ESPAÇAMENTO DE REGISTRO DE PRODUTOS <<<<<<------
         }
@@ -256,80 +253,89 @@ main {
 
 
 //------>>>>>> INICIO: TABELA <<<<<<------
-.table-div{
+.table-div {
     overflow-y: auto;
-    
+
+
     &::-webkit-scrollbar {
         width: 5px;
         height: 5px;
     }
-    
+
     &::-webkit-scrollbar-track {
         background: rgba(0, 0, 0, 0.1);
         border-radius: 20px;
     }
-    
+
     &::-webkit-scrollbar-thumb {
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 20px;
     }
-    
+
     &::-webkit-scrollbar-thumb:hover {
         background-color: rgba(0, 0, 0, 0.75);
     }
+
+    table {
+        margin: 10px 0;
+        box-shadow: 0 5px 30px darkgrey;
+    }
+    
+    
+    table,
+    th,
+    td {
+        font-size: .85rem;
+        border-collapse: collapse;
+    
+        padding: 5px;
+        font-weight: normal;
+        text-align: center;
+    }
+    
+    tbody td {
+        text-align: left;
+    }
+    
+    /* tbody {
+        display: block;
+        max-height: 390px;
+        overflow: auto;
+    }
+    
+    thead,
+    tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    } */
+    
+    th {
+        background-color: rgba(0, 0, 0, 0.750);
+        color: whitesmoke;
+    }
+    
+    tr td {
+        cursor: pointer;
+    }
+    
+    tr:nth-child(odd) {
+        background-color: lightgray;
+    }
+    
+    tr:hover td {
+        background-color: #fac696;
+        color: black;
+        transition: .2s ease-in-out;
+    }
+    
+    tr.selected td {
+        background-color: #71afff;
+        color: black;
+    }
+    
 }
 
-table {
-    margin: 10px 0;
-    box-shadow: 0 5px 30px darkgrey;
-}
-
-table,
-th,
-td {
-    font-size: .85rem;
-    border-collapse: collapse;
-    padding: 5px;
-    font-weight: normal;
-    text-align: left;
-}
-
-/* tbody {
-    display: block;
-    max-height: 390px;
-    overflow: auto;
-}
-
-thead,
-tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-} */
-
-th {
-    background-color: rgba(0, 0, 0, 0.750);
-    color: whitesmoke;
-}
-
-tr td {
-    cursor: pointer;
-}
-
-tr:nth-child(odd) {
-    background-color: lightgray;
-}
-
-tr:hover td {
-    background-color: #fac696;
-    color: black;
-    transition: .2s ease-in-out;
-}
-
-tr.selected td {
-    background-color: #71afff;
-    color: black;
-}
 
 //------>>>>>> FIM: TABELA <<<<<<------
 
@@ -459,7 +465,7 @@ tr.selected td {
 
 
         //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO VENDEDORES <<<<<<------
-        .id{
+        .id {
             width: 10%;
         }
 
@@ -509,19 +515,19 @@ tr.selected td {
 
         //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO FORNECEDORES <<<<<<------
 
-        .razao-social{
+        .razao-social {
             width: 100%;
         }
 
-        .cnpj{
+        .cnpj {
             width: 20%;
         }
 
         //------>>>>> FIM: ESPAÇAMENTO DE REGISTRO FORNECEDORES <<<<<<------
 
         //------>>>>> INICIO: ESPAÇAMENTO DE REGISTRO MÉTODOS DE PAGAMENTO <<<<<<------
-        
-        .method{
+
+        .method {
             width: 100%;
         }
 
@@ -724,7 +730,7 @@ tr.selected td {
         margin-bottom: 5px;
         font-size: 16px;
         padding: 2px;
-        font-family: 'Montserrat', sans-serif;
+
     }
 
     .btn {
@@ -762,4 +768,252 @@ tr.selected td {
         text-decoration: underline;
         transform: scale(1.1)
     }
+}
+
+.body{
+    background-color: #7487b8;
+
+    .sell-screen {
+        display: flex;
+        margin-top: 60px;
+        width: 1800px;
+        height: 800px;
+        background-color: whitesmoke;
+        border-radius: 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 1em darkgrey;
+        color: rgba(0, 0, 0, 0.5);
+
+        .central-column {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            padding: 10px 30px;
+            text-align: left;
+            font-size: 1.5rem;
+
+            .input{
+                margin: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .client{
+                width: 70%;
+            }
+
+            .coupon-discount{
+                width: 30%;
+            }
+
+            .vendedor{
+                width: 30%;
+            }
+
+            .product-id{
+                width: 10%;
+            }
+
+            .product-name{
+                width: 75%;
+            }
+
+            .product-size{
+                width: 5%;
+            }
+
+            .product-color{
+                width: 10%;
+            }
+
+            .total-price{
+                font-size: 1.75rem;
+                font-weight: bold;
+            }
+
+
+            .row-icons {
+                display: flex;
+                width: 100%;
+            }
+
+            .sell-items{
+                display: flex;
+                flex-direction: column;
+                width: 20%;
+                padding: 5px;
+            }
+
+            .sell-table {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                padding: 5px;
+            }
+
+            label {
+                margin-bottom: 0.5rem;
+                color: rgba(0, 0, 0, 0.5);
+                
+            }
+
+            input {
+                padding: 7px;
+                border-radius: 0.75rem;
+                border: 1px solid rgba(0, 0, 0, 0.5);
+                color: rgba(0, 0, 0, 0.5);
+                
+
+                &:read-only {
+                    color: #000000a6;
+                    font-weight: bolder;
+                    opacity: 0.3;
+                }
+            }
+
+            select {
+                padding: 5px;
+                border-radius: 0.75rem;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            input:focus, select:focus{
+                outline: 0;
+            }
+
+            //------>>>>>> INICIO: TABELA <<<<<<------
+
+            table{
+                border: 1px solid rgba(0, 0, 0, 0.5);
+            }
+            tbody {
+                display: block;
+                max-height: 225px;
+                min-height: 225px;
+                overflow: auto;
+                background-color: white;
+
+            &::-webkit-scrollbar {
+                width: 3px;
+                height: 5px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: white;
+                border-radius: 20px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 20px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(0, 0, 0, 0.75);
+            }
+            }
+    
+            thead,
+            tbody tr {
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+            } 
+
+            table,
+            th,
+            td {
+                font-size: 0.9rem;
+                border-collapse: collapse;
+                padding: 5px;
+                text-align: center;
+                
+            }
+            th {
+                background-color: rgb(41, 60, 110);
+                color: white;
+            }
+
+            tr td {
+                cursor: pointer;
+                background-color: white;
+            }
+
+            tr:hover td {
+                background-color: #fac696;
+                color: black;
+                transition: .2s ease-in-out;
+            }
+
+            tr.selected td {
+                background-color: #71afff;
+                color: black;
+            }
+            //------>>>>>> FIM: TABELA <<<<<<------
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .row-icons {
+            display: flex;
+        }
+
+        .row-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .row-icons i {
+            padding: 10px;
+            width: 7rem;
+            font-size: 1.5rem;
+        }
+
+        .row-icons i:hover {
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            transform: scale(1.3)
+        }
+
+        .row-icons p {
+            font-size: 16px;
+        }
+
+        .row-back {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back {
+            padding-top: 20px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, 0.5)
+        }
+
+        .back:hover {
+            color: black;
+            transition: .3s ease-in-out;
+            text-decoration: underline;
+            transform: scale(1.1)
+        }
+    } 
 }

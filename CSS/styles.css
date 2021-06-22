@@ -206,6 +206,18 @@ main .global-container-options .back:hover {
 
 .table-div {
   overflow-y: auto;
+  /* tbody {
+      display: block;
+      max-height: 390px;
+      overflow: auto;
+  }
+
+  thead,
+  tbody tr {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+  } */
 }
 .table-div::-webkit-scrollbar {
   width: 5px;
@@ -222,54 +234,38 @@ main .global-container-options .back:hover {
 .table-div::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.75);
 }
-
-table {
+.table-div table {
   margin: 10px 0;
   box-shadow: 0 5px 30px darkgrey;
 }
-
-table,
-th,
-td {
+.table-div table,
+.table-div th,
+.table-div td {
   font-size: 0.85rem;
   border-collapse: collapse;
   padding: 5px;
   font-weight: normal;
+  text-align: center;
+}
+.table-div tbody td {
   text-align: left;
 }
-
-/* tbody {
-    display: block;
-    max-height: 390px;
-    overflow: auto;
-}
-
-thead,
-tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-} */
-th {
+.table-div th {
   background-color: rgba(0, 0, 0, 0.75);
   color: whitesmoke;
 }
-
-tr td {
+.table-div tr td {
   cursor: pointer;
 }
-
-tr:nth-child(odd) {
+.table-div tr:nth-child(odd) {
   background-color: lightgray;
 }
-
-tr:hover td {
+.table-div tr:hover td {
   background-color: #fac696;
   color: black;
   transition: 0.2s ease-in-out;
 }
-
-tr.selected td {
+.table-div tr.selected td {
   background-color: #71afff;
   color: black;
 }
@@ -581,7 +577,6 @@ tr.selected td {
   margin-bottom: 5px;
   font-size: 16px;
   padding: 2px;
-  font-family: "Montserrat", sans-serif;
 }
 .barcode .btn {
   padding: 15px 30px;
@@ -609,6 +604,208 @@ tr.selected td {
   color: rgba(0, 0, 0, 0.5);
 }
 .barcode .back:hover {
+  color: black;
+  transition: 0.3s ease-in-out;
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+.body {
+  background-color: #7487b8;
+}
+.body .sell-screen {
+  display: flex;
+  margin-top: 60px;
+  width: 1800px;
+  height: 800px;
+  background-color: whitesmoke;
+  border-radius: 2rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 1em darkgrey;
+  color: rgba(0, 0, 0, 0.5);
+}
+.body .sell-screen .central-column {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.body .sell-screen .row {
+  display: flex;
+  width: 100%;
+  padding: 10px 30px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+.body .sell-screen .row .input {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.body .sell-screen .row .client {
+  width: 70%;
+}
+.body .sell-screen .row .coupon-discount {
+  width: 30%;
+}
+.body .sell-screen .row .vendedor {
+  width: 30%;
+}
+.body .sell-screen .row .product-id {
+  width: 10%;
+}
+.body .sell-screen .row .product-name {
+  width: 75%;
+}
+.body .sell-screen .row .product-size {
+  width: 5%;
+}
+.body .sell-screen .row .product-color {
+  width: 10%;
+}
+.body .sell-screen .row .total-price {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+.body .sell-screen .row .row-icons {
+  display: flex;
+  width: 100%;
+}
+.body .sell-screen .row .sell-items {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding: 5px;
+}
+.body .sell-screen .row .sell-table {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 5px;
+}
+.body .sell-screen .row label {
+  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.body .sell-screen .row input {
+  padding: 7px;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+}
+.body .sell-screen .row input:read-only {
+  color: #000000a6;
+  font-weight: bolder;
+  opacity: 0.3;
+}
+.body .sell-screen .row select {
+  padding: 5px;
+  border-radius: 0.75rem;
+  font-family: "Montserrat", sans-serif;
+}
+.body .sell-screen .row input:focus, .body .sell-screen .row select:focus {
+  outline: 0;
+}
+.body .sell-screen .row table {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.body .sell-screen .row tbody {
+  display: block;
+  max-height: 225px;
+  min-height: 225px;
+  overflow: auto;
+  background-color: white;
+}
+.body .sell-screen .row tbody::-webkit-scrollbar {
+  width: 3px;
+  height: 5px;
+}
+.body .sell-screen .row tbody::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 20px;
+}
+.body .sell-screen .row tbody::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+.body .sell-screen .row tbody::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.body .sell-screen .row thead,
+.body .sell-screen .row tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.body .sell-screen .row table,
+.body .sell-screen .row th,
+.body .sell-screen .row td {
+  font-size: 0.9rem;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
+.body .sell-screen .row th {
+  background-color: #293c6e;
+  color: white;
+}
+.body .sell-screen .row tr td {
+  cursor: pointer;
+  background-color: white;
+}
+.body .sell-screen .row tr:hover td {
+  background-color: #fac696;
+  color: black;
+  transition: 0.2s ease-in-out;
+}
+.body .sell-screen .row tr.selected td {
+  background-color: #71afff;
+  color: black;
+}
+.body .sell-screen .column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+.body .sell-screen .row-icons {
+  display: flex;
+}
+.body .sell-screen .row-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.body .sell-screen .row-icons i {
+  padding: 10px;
+  width: 7rem;
+  font-size: 1.5rem;
+}
+.body .sell-screen .row-icons i:hover {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  transform: scale(1.3);
+}
+.body .sell-screen .row-icons p {
+  font-size: 16px;
+}
+.body .sell-screen .row-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .sell-screen .back {
+  padding-top: 20px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.body .sell-screen .back:hover {
   color: black;
   transition: 0.3s ease-in-out;
   text-decoration: underline;
